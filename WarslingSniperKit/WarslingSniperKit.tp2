@@ -57,9 +57,9 @@ LAF fl#add_kit_ee
 
 	INT_VAR
 
-		biography = 15888
+		//biography = 15888 TO Verify
 
-		briefdesc = 31252
+		//briefdesc = 31252 TO Verify
 
 	STR_VAR
 
