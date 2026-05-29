@@ -73,17 +73,22 @@ COPY ~WarslingSniperKit/r/A0WS02.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS03.EFF~ ~override~
 ADD_PROJECTILE ~WarslingSniperKit/r/A0WS03.PRO~
 COPY ~WarslingSniperKit/r/A0WS03.SPL~ ~override~
-  WRITE_SHORT 0x098 ~%A0WS03%~
-  WRITE_SHORT 0x0c0 ~%A0WS03%~
-  WRITE_SHORT 0x0e8 ~%A0WS03%~
-  WRITE_SHORT 0x110 ~%A0WS03%~
-  WRITE_SHORT 0x138 ~%A0WS03%~
-  WRITE_SHORT 0x160 ~%A0WS03%~
-  WRITE_SHORT 0x188 ~%A0WS03%~
-  WRITE_SHORT 0x1b0 ~%A0WS03%~
-  WRITE_SHORT 0x1d8 ~%A0WS03%~
-  WRITE_SHORT 0x200 ~%A0WS03%~
-  WRITE_SHORT 0x228 ~%A0WS03%~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS03%~
+	END
+// WRITE_SHORT 0x098 ~%A0WS03%~
+// WRITE_SHORT 0x0c0 ~%A0WS03%~
+// WRITE_SHORT 0x0e8 ~%A0WS03%~
+// WRITE_SHORT 0x110 ~%A0WS03%~
+// WRITE_SHORT 0x138 ~%A0WS03%~
+// WRITE_SHORT 0x160 ~%A0WS03%~
+// WRITE_SHORT 0x188 ~%A0WS03%~
+// WRITE_SHORT 0x1b0 ~%A0WS03%~
+// WRITE_SHORT 0x1d8 ~%A0WS03%~
+// WRITE_SHORT 0x200 ~%A0WS03%~
+// WRITE_SHORT 0x228 ~%A0WS03%~
 
 
 
@@ -100,17 +105,22 @@ COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
 ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
 COPY ~WarslingSniperKit/r/A0WS06.SPL~ ~override~
-  WRITE_SHORT 0x098 ~%A0WS06%~
-  WRITE_SHORT 0x0c0 ~%A0WS06%~
-  WRITE_SHORT 0x0e8 ~%A0WS06%~
-  WRITE_SHORT 0x110 ~%A0WS06%~
-  WRITE_SHORT 0x168 ~%A0WS06%~
-  WRITE_SHORT 0x160 ~%A0WS06%~
-  WRITE_SHORT 0x188 ~%A0WS06%~
-  WRITE_SHORT 0x1b0 ~%A0WS06%~
-  WRITE_SHORT 0x1d8 ~%A0WS06%~
-  WRITE_SHORT 0x200 ~%A0WS06%~
-  WRITE_SHORT 0x228 ~%A0WS06%~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS06%~
+	END
+// WRITE_SHORT 0x098 ~%A0WS06%~
+// WRITE_SHORT 0x0c0 ~%A0WS06%~
+// WRITE_SHORT 0x0e8 ~%A0WS06%~
+// WRITE_SHORT 0x110 ~%A0WS06%~
+// WRITE_SHORT 0x168 ~%A0WS06%~
+// WRITE_SHORT 0x160 ~%A0WS06%~
+// WRITE_SHORT 0x188 ~%A0WS06%~
+// WRITE_SHORT 0x1b0 ~%A0WS06%~
+// WRITE_SHORT 0x1d8 ~%A0WS06%~
+// WRITE_SHORT 0x200 ~%A0WS06%~
+// WRITE_SHORT 0x228 ~%A0WS06%~
 
 
 
@@ -123,22 +133,28 @@ REQUIRE_COMPONENT ~WarslingSniperKit.tp2~ ~0~ ~Main component required~
 
 COPY ~WarslingSniperKit//2da/A0WS_3.2da~ ~override/A0WS.2da~
 
+COPY ~WarslingSniperKit//2da/A0WS_3.2da~ ~override/A0WS.2da~
+
 COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
 COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
 ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
 COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
-  WRITE_SHORT 0x098 ~%A0WS06%~
-  WRITE_SHORT 0x0c0 ~%A0WS06%~
-  WRITE_SHORT 0x0e8 ~%A0WS06%~
-  WRITE_SHORT 0x110 ~%A0WS06%~
-  WRITE_SHORT 0x168 ~%A0WS06%~
-  WRITE_SHORT 0x160 ~%A0WS06%~
-  WRITE_SHORT 0x188 ~%A0WS06%~
-  WRITE_SHORT 0x1b0 ~%A0WS06%~
-  WRITE_SHORT 0x1d8 ~%A0WS06%~
-  WRITE_SHORT 0x200 ~%A0WS06%~
-  WRITE_SHORT 0x228 ~%A0WS06%~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS08%~
+	END
+
+/*
+COPY_EXISTING ~A0WS06.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT 
+		INT_VAR 
+			opcode=139
+			target=1
+			parameter1= RESOLVE_STR_REF (@53)
+		END
+*/
 
 BEGIN ~Avec pourcentage de ricochet dès le niveau 2~  //Warsling Sniper Kit for Fighters
 DESIGNATED 2
@@ -154,32 +170,20 @@ COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
 ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
 COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
-  WRITE_SHORT 0x098 ~%A0WS06%~
-  WRITE_SHORT 0x0c0 ~%A0WS06%~
-  WRITE_SHORT 0x0e8 ~%A0WS06%~
-  WRITE_SHORT 0x110 ~%A0WS06%~
-  WRITE_SHORT 0x168 ~%A0WS06%~
-  WRITE_SHORT 0x160 ~%A0WS06%~
-  WRITE_SHORT 0x188 ~%A0WS06%~
-  WRITE_SHORT 0x1b0 ~%A0WS06%~
-  WRITE_SHORT 0x1d8 ~%A0WS06%~
-  WRITE_SHORT 0x200 ~%A0WS06%~
-  WRITE_SHORT 0x228 ~%A0WS06%~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS08%~
+	END
 
 COPY ~WarslingSniperKit/r/A0WS09.SPL~ ~override~
 COPY ~WarslingSniperKit/r/A0WS09.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS10.EFF~ ~override~
 ADD_PROJECTILE ~WarslingSniperKit/r/A0WS10.PRO~
 COPY ~WarslingSniperKit/r/A0WS10.SPL~ ~override~
-  WRITE_SHORT 0x098 ~%A0WS06%~
-  WRITE_SHORT 0x0c0 ~%A0WS06%~
-  WRITE_SHORT 0x0e8 ~%A0WS06%~
-  WRITE_SHORT 0x110 ~%A0WS06%~
-  WRITE_SHORT 0x168 ~%A0WS06%~
-  WRITE_SHORT 0x160 ~%A0WS06%~
-  WRITE_SHORT 0x188 ~%A0WS06%~
-  WRITE_SHORT 0x1b0 ~%A0WS06%~
-  WRITE_SHORT 0x1d8 ~%A0WS06%~
-  WRITE_SHORT 0x200 ~%A0WS06%~
-  WRITE_SHORT 0x228 ~%A0WS06%~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS10%~
+	END
 
