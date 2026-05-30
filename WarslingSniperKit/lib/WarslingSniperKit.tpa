@@ -1,17 +1,17 @@
 ACTION_IF WarslingSniperKit = 0 THEN BEGIN
-	OUTER_SPRINT "WarslingSniperKit_help" "@3"
+	OUTER_SET help = RESOLVE_STR_REF(@3)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_0"
 END ELSE ACTION_IF WarslingSniperKit = 1 THEN BEGIN
-	OUTER_SPRINT "WarslingSniperKit_help" "@31"
+	OUTER_SET help = RESOLVE_STR_REF(@31)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "@A0WS_1"
 END ELSE ACTION_IF WarslingSniperKit = 2 THEN BEGIN
-	OUTER_SPRINT "WarslingSniperKit_help" "@32"
+	OUTER_SET help = RESOLVE_STR_REF(@32)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_2"
 END ELSE ACTION_IF WarslingSniperKit = 3 THEN BEGIN
-	OUTER_SPRINT "WarslingSniperKit_help" "@33"
+	OUTER_SET help = RESOLVE_STR_REF(@33)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_3"
 END ELSE ACTION_IF WarslingSniperKit = 4 THEN BEGIN
-	OUTER_SPRINT "WarslingSniperKit_help" "@34"
+	OUTER_SET help = RESOLVE_STR_REF(@34)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_4"
 END
 
@@ -22,7 +22,7 @@ INT_VAR
   kit_class = 2
   lower     = RESOLVE_STR_REF(@1) /*~warsling sniper~*/
   mixed     = RESOLVE_STR_REF(@2) /*~Warsling Sniper~*/
-  help      = RESOLVE_STR_REF(%WarslingSniperKit_help%) /*~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
+  help      /* = RESOLVE_STR_REF(@3) ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
 
 Advantages:
 -  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
