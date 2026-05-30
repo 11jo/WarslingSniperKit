@@ -1,16 +1,33 @@
-Warsling Sniper Kit
-version 3.0
+# Warsling Sniper Kit
 
-by Adam Zsoldos
+[![Release](https://img.shields.io/github/v/release/The-Gate-Project/Warsling_Sniper?include_prereleases&color=41788a)](https://github.com/The-Gate-Project/Warsling_Sniper/releases)
+[![Published](https://img.shields.io/github/release-date-pre/The-Gate-Project/Warsling_Sniper?display_date=published_at&label=published&color=014a69)](https://github.com/The-Gate-Project/Warsling_Sniper/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/The-Gate-Project/Warsling_Sniper/total?color=41788a)](https://github.com/The-Gate-Project/Warsling_Sniper/releases)
+
+[![Language](https://img.shields.io/badge/language-english%20%a0%20french-014a69)](https://github.com/The-Gate-Project/Warsling_Sniper/releases)
+[![Games](https://img.shields.io/badge/games-BGII:ToB%20%a0%20BGEE%20%a0%20IWDEE%20%a0%20BG2EE%20%a0%20BGT%20%a0%20EET-41788a)](https://github.com/The-Gate-Project/Warsling_Sniper/releases)
+
+<!--
+
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2FThe-Gate-Project%2FWarsling_Sniper&countColor=41788a&style=flat)
+
+[![Platform](https://img.shields.io/badge/platform-Windows%20%a0%20macOS%20%a0%20Linux%20%a0%20Project%20Infinity-014a69)](https://github.com/The-Gate-Project/Warsling_Sniper/releases)
+-->
+
+**Author** : **Adam Zsoldos**
+
+[Link to original Mod Forum](http://www.shsforums.net/topic/46480-warsling-sniper-kit-for-fighters/)
+
+[Link to original Mod Download](http://www.shsforums.net/files/file/935-warsling-sniper-kit-for-fighters/)
 
 Playable fighter kit for Baldur's Gate II:
 Baldur's Gate: EE, Baldur's Gate II: EE, Icewind Dale: EE and the Enhanced Edition Trilogy (EET).
 
 
-Description:
+## Description:
 ------------
 
-#### Original version
+### Original version
 
 The sling is a difficult weapon to master, but in the hands of a
 warsling sniper it becomes a precise tool of war. Although slings
@@ -31,23 +48,24 @@ Disadvantages:
 - May not wear armor greater than studded leather
 - Hit Die: d8
 
-#### Add a chance pourcentage to make a ricochet starting at level 2
+### Add a chance pourcentage to make a ricochet starting at level 2
 
 -  At level 2, he gains 5 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
 -  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
 -  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
 -  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
 
-#### Abundance of ricochets starting at level 24
+### Abundance of ricochets starting at level 24
 
 -  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
 
-#### Abundance of ricochets starting at level 24 with 5 % chance that one ricochet hit one ally
+### Abundance of ricochets starting at level 24 with 5 % chance that one ricochet hit one ally
 
 -  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
 
 
-Install:
+
+## Install:
 --------
 
 Extract archive contents into your game directory
@@ -55,7 +73,7 @@ Run Setup-WarslingSniperKit.exe
 Follow the prompt
 
 
-Version History:
+## Version History:
 ----------------
 
 v1.0: Initial release
@@ -82,3 +100,4 @@ v2.2:
 - Move file A0WS.2da to 2da folder
 - Move readmes to readme folder and up english readme
 - Add iconv
+- Minor correction to the display of proficiencies during character creation and leveling up

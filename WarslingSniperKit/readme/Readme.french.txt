@@ -1,5 +1,5 @@
 Kit de Frondeur d'élite
-version 2.2
+version 3.0
 
 par Adam Zsoldos
 
@@ -9,16 +9,34 @@ Ainsi que Baldur's Gate : EE, Baldur's Gate II : EE, Icewind Dale : EE et Enhanc
 
 Description :
 ------------
-La fronde est une arme difficile à maîtriser, mais entre les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
 
-Avantages :
+#### Version originale
+
+FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
+
+Avantages :
 - Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
 - À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet d'élite qui permet à tous les projectiles de rebondir sur leur cible et atteindre un nouvel ennemi à proximité.
 
-Inconvénients :
+Inconvénients :
 - Ne peut se spécialiser avec une arme autre que la fronde.
 - Ne peut porter d'armure plus lourde que la besantine.
-– Dés de vie*: d8~
+– Dés de vie : d8
+
+#### Ajouter une chance d'effectuer un ricochet à partir du 2ème niveau
+
+- À partir du 2ème niveau, le Frondeur d'élite a 5 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 4ème niveau, le Frondeur d'élite a 10 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 6ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 8ème niveau, le Frondeur d'élite a 70 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+
+#### Abondance de ricochets à partir du 24ème niveau
+
+- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et atteindre plusieurs ennemis à proximité.
+
+#### Abondance de ricochets à partir du 24ème niveau avec 5 % de chance de toucher un allié à proximité
+
+- La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
 
 
 Installation :
