@@ -3,7 +3,7 @@ ACTION_IF WarslingSniperKit = 0 THEN BEGIN
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_0"
 END ELSE ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 	OUTER_SET help = RESOLVE_STR_REF(@31)
-	OUTER_SPRINT "WarslingSniperKit_A0WS" "@A0WS_1"
+	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_1"
 END ELSE ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 	OUTER_SET help = RESOLVE_STR_REF(@32)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_2"
@@ -78,10 +78,56 @@ COPY ~WarslingSniperKit/r/A0WS03.SPL~ ~override~
 // WRITE_SHORT 0x200 ~%A0WS03%~
 // WRITE_SHORT 0x228 ~%A0WS03%~
 
+COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS03.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
 
 ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
-	
+
 	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
+/*	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS02
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS10
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS11
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS12
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS13
+	END*/
 	COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
 	COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
 	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
@@ -91,6 +137,10 @@ ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 
 				check_headers = 1
 				projectile  = EVAL  ~%A0WS06%~
 		END
+
+COPY_EXISTING ~A0WS06.PRO~ ~override/A0WS06.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
 
 END
 
@@ -108,6 +158,10 @@ COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
 			projectile  = EVAL  ~%A0WS08%~
 	END
 
+COPY_EXISTING ~A0WS08.PRO~ ~override/A0WS08.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
 END
 
 /*
@@ -120,3 +174,379 @@ COPY_EXISTING ~A0WS06.SPL~ ~override~
 		END
 */
 
+
+ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
+
+	COPY ~WarslingSniperKit/r/A0W10S.SPL~ ~override~
+	COPY ~WarslingSniperKit/r/A0W10S.EFF~ ~override~
+	COPY ~WarslingSniperKit/r/A0WS10.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS10.PRO~
+	COPY ~WarslingSniperKit/r/A0WS10.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS10%~
+		END
+
+COPY_EXISTING ~A0WS10.PRO~ ~override/A0WS10.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+	COPY ~WarslingSniperKit/test/A0W11S.SPL~ ~override~
+	COPY ~WarslingSniperKit/test/A0W11S.EFF~ ~override~
+	COPY ~WarslingSniperKit/test/A0WS11.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS11.PRO~
+	COPY ~WarslingSniperKit/test/A0WS11.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS11%~
+		END
+
+COPY_EXISTING ~A0WS11.PRO~ ~override/A0WS11.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+END
+
+ACTION_IF WarslingSniperKit = 1 THEN BEGIN
+
+	COPY ~WarslingSniperKit/test/A0W12S.SPL~ ~override~
+	COPY ~WarslingSniperKit/test/A0W12S.EFF~ ~override~
+	COPY ~WarslingSniperKit/test/A0WS12.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS12.PRO~
+	COPY ~WarslingSniperKit/test/A0WS12.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS12%~
+		END
+
+COPY_EXISTING ~A0WS12.PRO~ ~override/A0WS12.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+	COPY ~WarslingSniperKit/test/A0W13S.SPL~ ~override~
+	COPY ~WarslingSniperKit/test/A0W13S.EFF~ ~override~
+	COPY ~WarslingSniperKit/test/A0WS13.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS13.PRO~
+	COPY ~WarslingSniperKit/test/A0WS13.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS13%~
+		END
+
+COPY_EXISTING ~A0WS13.PRO~ ~override/A0WS13.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+	COPY ~WarslingSniperKit/test/A0W13S.SPL~ ~override~
+	COPY ~WarslingSniperKit/test/A0W13S.EFF~ ~override~
+	COPY ~WarslingSniperKit/test/A0WS13.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS13.PRO~
+	COPY ~WarslingSniperKit/test/A0WS13.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS13%~
+		END
+
+COPY_EXISTING ~A0WS13.PRO~ ~override/A0WS13.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+END
+
+/*
+
+COPY_EXISTING ~A0WS02.SPL~ ~override/A0W10S.SPL~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=249 END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0W10S
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0WS10
+	END
+COPY_EXISTING ~A0WS02.SPL~ ~override/A0W11S.SPL~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=249 END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0W11S
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0WS11
+	END
+COPY_EXISTING ~A0WS02.SPL~ ~override/A0W12S.SPL~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=249 END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0W12S
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0WS12
+	END
+COPY_EXISTING ~A0WS02.SPL~ ~override/A0W13S.SPL~
+	LPF DELETE_SPELL_EFFECT INT_VAR opcode_to_delete=249 END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0W13S
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 249
+			target   = 2
+		STR_VAR
+			resource = A0WS13
+	END
+
+COPY_EXISTING ~A0WS02.EFF~ ~override/A0W10S.EFF~
+  WRITE_ASCII 0x30 ~A0WS10~ (8)
+COPY_EXISTING ~A0WS02.EFF~ ~override/A0W11S.EFF~
+  WRITE_ASCII 0x30 ~A0WS11~ (8)
+COPY_EXISTING ~A0WS02.EFF~ ~override/A0W12S.EFF~
+  WRITE_ASCII 0x30 ~A0WS12~ (8)
+COPY_EXISTING ~A0WS02.EFF~ ~override/A0W13S.EFF~
+  WRITE_ASCII 0x30 ~A0WS12~ (8)
+
+COPY_EXISTING ~A0WS03.EFF~ ~override/A0WS10.EFF~
+  WRITE_ASCII 0x30 ~A0WS10~ (8)
+COPY_EXISTING ~A0WS03.EFF~ ~override/A0WS11.EFF~
+  WRITE_ASCII 0x30 ~A0WS11~ (8)
+COPY_EXISTING ~A0WS03.EFF~ ~override/A0WS12.EFF~
+  WRITE_ASCII 0x30 ~A0WS12~ (8)
+COPY_EXISTING ~A0WS03.EFF~ ~override/A0WS13.EFF~
+  WRITE_ASCII 0x30 ~A0WS12~ (8)
+
+COPY_EXISTING ~A0WS03.SPL~ ~override/A0WS10.SPL~
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 6 // Level 12
+			opcode   = 12
+			target   = 2
+			probability1 = 30
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 7 // Level 16
+			opcode   = 12
+			target   = 2
+			probability1 = 60
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 8 // Level 20
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 9 // Level 24
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			header   = 10 // Level 28
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT
+		INT_VAR
+			header   = 11 // Level 32
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 12 // Level 36
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 13 // Level 40
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 14 // Level 44
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Second
+		INT_VAR
+			header   = 15 // Level 48
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+
+COPY_EXISTING ~A0WS03.SPL~ ~override/A0WS11.SPL~
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 9 // Level 24
+			opcode   = 12
+			target   = 2
+			probability1 = 30
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 10 // Level 28
+			opcode   = 12
+			target   = 2
+			probability1 = 60
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 11 // Level 32
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 12 // Level 36
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 13 // Level 40
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 14 // Level 44
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Third
+		INT_VAR
+			header   = 15 // Level 48
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+
+COPY_EXISTING ~A0WS03.SPL~ ~override/A0WS12.SPL~
+	LPF ALTER_SPELL_EFFECT // Fourth
+		INT_VAR
+			header   = 12 // Level 36
+			opcode   = 12
+			target   = 2
+			probability1 = 30
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Fourth
+		INT_VAR
+			header   = 13 // Level 40
+			opcode   = 12
+			target   = 2
+			probability1 = 60
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Fourth
+		INT_VAR
+			header   = 14 // Level 44
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ALTER_SPELL_EFFECT // Fourth
+		INT_VAR
+			header   = 15 // Level 48
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+
+COPY_EXISTING ~A0WS03.SPL~ ~override/A0WS13.SPL~
+	LPF ALTER_SPELL_EFFECT // Fifth
+		INT_VAR
+			header   = 15 // Level 48
+			opcode   = 12
+			target   = 2
+			probability1 = 100
+		STR_VAR
+			resource = A0WS03
+	END
+
+*/
