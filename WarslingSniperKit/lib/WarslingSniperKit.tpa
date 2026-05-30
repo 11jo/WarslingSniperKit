@@ -177,22 +177,22 @@ COPY_EXISTING ~A0WS06.SPL~ ~override~
 
 ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
 
-	COPY ~WarslingSniperKit/r/A0W10S.SPL~ ~override~
-	COPY ~WarslingSniperKit/r/A0W10S.EFF~ ~override~
-	COPY ~WarslingSniperKit/r/A0WS10.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS10.EFF~ ~override~
 
-	COPY ~WarslingSniperKit/r/A0WS10.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS10.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
 				projectile  = EVAL  ~%A0WS03%~
 		END
 
-	COPY ~WarslingSniperKit/test/A0W11S.SPL~ ~override~
-	COPY ~WarslingSniperKit/test/A0W11S.EFF~ ~override~
-	COPY ~WarslingSniperKit/test/A0WS11.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS11.EFF~ ~override~
 
-	COPY ~WarslingSniperKit/test/A0WS11.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS11.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
@@ -203,22 +203,22 @@ END
 
 ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 
-	COPY ~WarslingSniperKit/test/A0W12S.SPL~ ~override~
-	COPY ~WarslingSniperKit/test/A0W12S.EFF~ ~override~
-	COPY ~WarslingSniperKit/test/A0WS12.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS12.EFF~ ~override~
 
-	COPY ~WarslingSniperKit/test/A0WS12.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS12.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
 				projectile  = EVAL  ~%A0WS03%~
 		END
 
-	COPY ~WarslingSniperKit/test/A0W13S.SPL~ ~override~
-	COPY ~WarslingSniperKit/test/A0W13S.EFF~ ~override~
-	COPY ~WarslingSniperKit/test/A0WS13.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W13S.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W13S.EFF~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS13.EFF~ ~override~
 
-	COPY ~WarslingSniperKit/test/A0WS13.SPL~ ~override~
+	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS13.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1

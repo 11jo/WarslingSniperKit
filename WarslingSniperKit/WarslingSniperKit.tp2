@@ -58,7 +58,7 @@ INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
 BEGIN @6
 DESIGNATED 1
-LABEL ~Adam_Zsoldos_WarslingSniperKit-BG1-Fault~
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Pourcentage~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~bgee iwdee eet bgt~ @5
 
@@ -99,3 +99,173 @@ OUTER_SET WarslingSniperKit = 4
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
+
+
+
+BEGIN ~Jaheira the warsling sniper~
+DESIGNATED 5
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Jaheira~
+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @5
+
+// Borrowed from Charlatan Kit by Raduziel
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "A0WS" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "A0WS"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit_Jaheira = "%A0WS%"
+
+//												Regular
+ACTION_FOR_EACH creature IN JAHEI12B JAHEI14 JAHEIR JAHEIR11 JAHEIR12 JAHEIR2 JAHEIR4 JAHEIR6 JAHEIR7 JAHEIR_7 JAHEIR8 JAHEIRD BEGIN
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+PRINT ~Jaheira Exists~
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			WRITE_SHORT 0x244 0
+			WRITE_SHORT 0x246 0x4000 + kit_Jaheira
+      BUT_ONLY
+
+	END
+END
+
+
+BEGIN ~Montaron the warsling sniper~
+DESIGNATED 6
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Montaron~
+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @5
+
+// Borrowed from Charlatan Kit by Raduziel
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "A0WS" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "A0WS"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit_Montaron = "%A0WS%"
+
+//							Regular							TDD		BG1NPCSoA
+ACTION_FOR_EACH creature IN MONTAR MONTAR2 MONTAR4 MONTAR6 MONTYRA2 7XCRE74 BEGIN
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+PRINT ~Montaron Exists~
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			WRITE_SHORT 0x244 0
+			WRITE_SHORT 0x246 0x4000 + kit_Montaron
+      BUT_ONLY
+
+	END
+END
+
+
+BEGIN ~Yeslick the warsling sniper~
+DESIGNATED 7
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Yeslick~
+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @5
+
+// Borrowed from Charlatan Kit by Raduziel
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "A0WS" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "A0WS"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit_Yeslick = "%A0WS%"
+
+//							Regular					yeslicknpc		?		TDD		BG1NPCSoA
+ACTION_FOR_EACH creature IN YESLIC YESLIC5 YESLIS lk#yes25 lk#yesl DYESLICK YESLIC9 7Xcre2 BEGIN
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+PRINT ~Yeslick Exists~
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			WRITE_SHORT 0x244 0
+			WRITE_SHORT 0x246 0x4000 + kit_Yeslick
+      BUT_ONLY
+
+	END
+END
+
+
+BEGIN ~Deder from Candlekeep the warsling sniper~
+DESIGNATED 8
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Deder~
+REQUIRE_PREDICATE GAME_IS ~bgee eet bgt~ @5
+
+// Borrowed from Charlatan Kit by Raduziel
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "A0WS" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "A0WS"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit_Deder = "%A0WS%"
+
+//							Regular
+ACTION_FOR_EACH creature IN DEDER DEDER3 BEGIN
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+PRINT ~Deder Exists~
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			WRITE_SHORT 0x244 0
+			WRITE_SHORT 0x246 0x4000 + kit_Deder
+      BUT_ONLY
+
+	END
+END
+
+BEGIN ~Glint the warsling sniper~
+DESIGNATED 9
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Glint~
+REQUIRE_PREDICATE GAME_INCLUDES ~sod~ @5
+
+// Borrowed from Charlatan Kit by Raduziel
+
+COPY_EXISTING ~kitlist.2da~ ~override~
+  COUNT_2DA_ROWS ~9~ "rows"
+  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+    READ_2DA_ENTRY "%index%" 5 9 "clab"
+    PATCH_IF ("%clab%" STRING_COMPARE_CASE "A0WS" = 0) BEGIN
+      READ_2DA_ENTRY "%index%" 0 9 "A0WS"
+      SET "rows" = 0
+    END
+  END
+  BUT_ONLY_IF_IT_CHANGES
+
+OUTER_SET kit_Glint = "%A0WS%"
+
+//							Regular
+ACTION_FOR_EACH creature IN GLINT7 BEGIN
+
+	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+PRINT ~Glint Exists~
+		COPY_EXISTING ~%creature%.cre~ ~override~
+			WRITE_SHORT 0x244 0
+			WRITE_SHORT 0x246 0x4000 + kit_Glint
+      BUT_ONLY
+
+	END
+END
