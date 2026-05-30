@@ -86,7 +86,7 @@ COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS03.PRO~
 ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
 
 	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
-/*	LPF ADD_SPELL_EFFECT
+	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
 			target   = 2
@@ -127,7 +127,7 @@ ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 
 			target   = 2
 		STR_VAR
 			resource = A0WS13
-	END*/
+	END
 	COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
 	COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
 	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
@@ -180,32 +180,24 @@ ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
 	COPY ~WarslingSniperKit/r/A0W10S.SPL~ ~override~
 	COPY ~WarslingSniperKit/r/A0W10S.EFF~ ~override~
 	COPY ~WarslingSniperKit/r/A0WS10.EFF~ ~override~
-	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS10.PRO~
+
 	COPY ~WarslingSniperKit/r/A0WS10.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
-				projectile  = EVAL  ~%A0WS10%~
+				projectile  = EVAL  ~%A0WS03%~
 		END
-
-COPY_EXISTING ~A0WS10.PRO~ ~override/A0WS10.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
 
 	COPY ~WarslingSniperKit/test/A0W11S.SPL~ ~override~
 	COPY ~WarslingSniperKit/test/A0W11S.EFF~ ~override~
 	COPY ~WarslingSniperKit/test/A0WS11.EFF~ ~override~
-	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS11.PRO~
+
 	COPY ~WarslingSniperKit/test/A0WS11.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
-				projectile  = EVAL  ~%A0WS11%~
+				projectile  = EVAL  ~%A0WS03%~
 		END
-
-COPY_EXISTING ~A0WS11.PRO~ ~override/A0WS11.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
 
 END
 
@@ -214,47 +206,24 @@ ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 	COPY ~WarslingSniperKit/test/A0W12S.SPL~ ~override~
 	COPY ~WarslingSniperKit/test/A0W12S.EFF~ ~override~
 	COPY ~WarslingSniperKit/test/A0WS12.EFF~ ~override~
-	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS12.PRO~
+
 	COPY ~WarslingSniperKit/test/A0WS12.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
-				projectile  = EVAL  ~%A0WS12%~
+				projectile  = EVAL  ~%A0WS03%~
 		END
-
-COPY_EXISTING ~A0WS12.PRO~ ~override/A0WS12.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
 
 	COPY ~WarslingSniperKit/test/A0W13S.SPL~ ~override~
 	COPY ~WarslingSniperKit/test/A0W13S.EFF~ ~override~
 	COPY ~WarslingSniperKit/test/A0WS13.EFF~ ~override~
-	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS13.PRO~
+
 	COPY ~WarslingSniperKit/test/A0WS13.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
 				check_headers = 1
-				projectile  = EVAL  ~%A0WS13%~
+				projectile  = EVAL  ~%A0WS03%~
 		END
-
-COPY_EXISTING ~A0WS13.PRO~ ~override/A0WS13.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
-
-	COPY ~WarslingSniperKit/test/A0W13S.SPL~ ~override~
-	COPY ~WarslingSniperKit/test/A0W13S.EFF~ ~override~
-	COPY ~WarslingSniperKit/test/A0WS13.EFF~ ~override~
-	ADD_PROJECTILE ~WarslingSniperKit/test/A0WS13.PRO~
-	COPY ~WarslingSniperKit/test/A0WS13.SPL~ ~override~
-		LPF ALTER_SPELL_HEADER
-			INT_VAR
-				check_headers = 1
-				projectile  = EVAL  ~%A0WS13%~
-		END
-
-COPY_EXISTING ~A0WS13.PRO~ ~override/A0WS13.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
 
 END
 
