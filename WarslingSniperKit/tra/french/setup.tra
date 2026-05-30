@@ -1,16 +1,82 @@
-@0 = ~Le Frondeur d'elite, kit de guerrier~
-@1 = ~frondeur d'�lite~
-@2 = ~Frondeur d'�lite~
-@3 = ~FRONDEUR D'�LITE : La fronde est difficile � ma�triser, mais dans les mains d'un frondeur d'�lite, elle devient une arme de haute pr�cision. Bien que les frondes soient commun�ment associ�es et utilis�es par les petites-personnes, elles sont accessibles � toutes les races.
+@0 = ~Le Frondeur d’élite, kit de guerrier~
+@1 = ~frondeur d'élite~
+@2 = ~Frondeur d'élite~
+@3 = ~FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
 
-Avantages�:
-- Bonus de 1 au toucher et aux d�g�ts avec les armes � projectiles d�s le premier niveau, puis tous les 4 niveaux.
-- � partir du 10�me niveau, le Frondeur d'�lite acquiert la capacit� passive Ricochet d'�lite qui permet � tous les projectiles de rebondir sur leur cible et atteindre un nouvel ennemi � proximit�.
+Avantages :
+- Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
+- À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet d'élite qui permet à tous les projectiles de rebondir sur leur cible et atteindre un nouvel ennemi à proximité.
 
-Inconv�nients�:
-- Ne peut se sp�cialiser avec une arme autre que la fronde.
+Inconvénients :
+- Ne peut se spécialiser avec une arme autre que la fronde.
 - Ne peut porter d'armure plus lourde que la besantine.
-� D�s de vie�: d8~
+– Dés de vie : d8~
+
+@4 = ~Version originale~
+@5 = ~Ce mod nécessite BG2, BGEE, IWDEE, BG2EE, BGT ou EET~
+@6 = ~Add a chance pourcentage to make a ricochet starting at level 2~
+@7 = ~Multiricochets starting at level 24~
+@8 = ~Multiricochets starting at level 24 with 5 % chance that one ricochet hit one ally~
+@9 = ~All of the above~
+
+@31 = ~FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
+
+Avantages :
+- Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
+- À partir du 2ème niveau, le Frondeur d'élite a 5 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 4ème niveau, le Frondeur d'élite a 10 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 6ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 8ème niveau, le Frondeur d'élite a 70 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet qui permet à tous ses projectiles de rebondir sur leur cible et d'atteindre un autre ennemi à proximité.
+
+Inconvénients :
+- Ne peut se spécialiser avec une arme autre que la fronde.
+- Ne peut porter d'armure plus lourde que la besantine.
+– Dés de vie : d8~
+
+@32 = ~FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
+
+Avantages :
+- Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
+- À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet d'élite qui permet à tous les projectiles de rebondir sur leur cible et atteindre un nouvel ennemi à proximité.
+- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et atteindre plusieurs ennemis à proximité.
+
+Inconvénients :
+- Ne peut se spécialiser avec une arme autre que la fronde.
+- Ne peut porter d'armure plus lourde que la besantine.
+– Dés de vie : d8~
+
+@33 = ~FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
+
+Avantages :
+- Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
+- À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet d'élite qui permet à tous les projectiles de rebondir sur leur cible et atteindre un nouvel ennemi à proximité.
+- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et atteindre plusieurs ennemis à proximité.
+
+Inconvénients :
+- La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
+- Ne peut se spécialiser avec une arme autre que la fronde.
+- Ne peut porter d'armure plus lourde que la besantine.
+– Dés de vie : d8~
+
+@34 = ~FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
+
+Avantages :
+- Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
+- À partir du 2ème niveau, le Frondeur d'élite a 5 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 4ème niveau, le Frondeur d'élite a 10 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 6ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 8ème niveau, le Frondeur d'élite a 70 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+- À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet qui permet à tous ses projectiles de rebondir sur leur cible et d'atteindre un autre ennemi à proximité.
+- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et atteindre plusieurs ennemis à proximité.
+
+Inconvénients :
+- La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
+- Ne peut se spécialiser avec une arme autre que la fronde.
+- Ne peut porter d'armure plus lourde que la besantine.
+– Dés de vie : d8~
+
+
 
 
 /* =============== *

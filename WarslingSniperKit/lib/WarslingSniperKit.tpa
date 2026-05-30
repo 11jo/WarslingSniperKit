@@ -1,0 +1,122 @@
+ACTION_IF WarslingSniperKit = 0 THEN BEGIN
+	OUTER_SPRINT "WarslingSniperKit_help" "@3"
+	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_0"
+END ELSE ACTION_IF WarslingSniperKit = 1 THEN BEGIN
+	OUTER_SPRINT "WarslingSniperKit_help" "@31"
+	OUTER_SPRINT "WarslingSniperKit_A0WS" "@A0WS_1"
+END ELSE ACTION_IF WarslingSniperKit = 2 THEN BEGIN
+	OUTER_SPRINT "WarslingSniperKit_help" "@32"
+	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_2"
+END ELSE ACTION_IF WarslingSniperKit = 3 THEN BEGIN
+	OUTER_SPRINT "WarslingSniperKit_help" "@33"
+	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_3"
+END ELSE ACTION_IF WarslingSniperKit = 4 THEN BEGIN
+	OUTER_SPRINT "WarslingSniperKit_help" "@34"
+	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_4"
+END
+
+INCLUDE ~WarslingSniperKit/lib/a7#add_kit_ex.tpa~
+
+LAF ADD_KIT_EX
+INT_VAR
+  kit_class = 2
+  lower     = RESOLVE_STR_REF(@1) /*~warsling sniper~*/
+  mixed     = RESOLVE_STR_REF(@2) /*~Warsling Sniper~*/
+  help      = RESOLVE_STR_REF(%WarslingSniperKit_help%) /*~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
+
+Advantages:
+-  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+-  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
+
+Disadvantages:
+-  May not specialize in any weapon other than the sling
+-  May not wear armor greater than studded leather
+-  Hit Die: d8~*/
+STR_VAR
+  kit_name  = ~A0WS~
+  unusable  = ~0x0000C000~
+  hpclass = ~HPMONK~
+  briefdesc = 31252
+  biography = 15888
+  clascolr = ~28 93 91 91 93~
+  clasweap  = ~1           1           1           1           1           1           1           1~
+  weapprof  = ~1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 5 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
+  abclasrq  = ~9       0       0       0       0       0~
+  abclsmod  = ~0       0       0       0       0       0~
+  abdcdsrq  = ~17      0       0       0       0       0~
+  abdcscrq  = ~15      0       0       0       0       0~
+  alignmnt  = ~1       1       1       1       1       1       1       1       1~
+  dualclas  = ~0       1       1       1       1       0~
+  clab_path = EVAL ~%MOD_FOLDER%/2da/%WarslingSniperKit_A0WS%/A0WS.2da~
+  kittable  = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
+  luabbr    = ~Fi0~
+  stweap    = ~LEAT14 * * BAG28 RING06 RING05,10 * BOOT02 AMUL19 BRAC16 BELT06 BULL03,40 BULL03,40 BULL03,40 POTN52,5 POTN04,2 POTN14,5 DAGG12 SW1H28 SLNG05~
+RET
+  kit_id
+END
+
+COPY ~WarslingSniperKit/r/A0WS01.SPL~ ~override~
+COPY ~WarslingSniperKit/r/A0WS02.SPL~ ~override~
+COPY ~WarslingSniperKit/r/A0WS02.EFF~ ~override~
+COPY ~WarslingSniperKit/r/A0WS03.EFF~ ~override~
+ADD_PROJECTILE ~WarslingSniperKit/r/A0WS03.PRO~
+COPY ~WarslingSniperKit/r/A0WS03.SPL~ ~override~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS03%~
+	END
+// WRITE_SHORT 0x098 ~%A0WS03%~
+// WRITE_SHORT 0x0c0 ~%A0WS03%~
+// WRITE_SHORT 0x0e8 ~%A0WS03%~
+// WRITE_SHORT 0x110 ~%A0WS03%~
+// WRITE_SHORT 0x138 ~%A0WS03%~
+// WRITE_SHORT 0x160 ~%A0WS03%~
+// WRITE_SHORT 0x188 ~%A0WS03%~
+// WRITE_SHORT 0x1b0 ~%A0WS03%~
+// WRITE_SHORT 0x1d8 ~%A0WS03%~
+// WRITE_SHORT 0x200 ~%A0WS03%~
+// WRITE_SHORT 0x228 ~%A0WS03%~
+
+
+ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
+	
+	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
+	COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
+	COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
+	COPY ~WarslingSniperKit/r/A0WS06.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS06%~
+		END
+
+END
+
+
+ACTION_IF WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
+
+COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
+COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
+COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
+ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
+COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS08%~
+	END
+
+END
+
+/*
+COPY_EXISTING ~A0WS06.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT 
+		INT_VAR 
+			opcode=139
+			target=1
+			parameter1= RESOLVE_STR_REF (@53)
+		END
+*/
+

@@ -1,189 +1,101 @@
-BACKUP ~WarslingSniperKit/backup~
+BACKUP ~weidu_external/WarslingSniperKit/backup~
+
 AUTHOR ~adul@adul.net~
+
 README ~WarslingSniperKit/readme/Readme.%LANGUAGE%.txt~ ~WarslingSniperKit/readme/Readme.english.txt~
 
+VERSION ~v3.0~
+
 ALWAYS
-	ACTION_DEFINE_ARRAY Ad_reload BEGIN
-	"setup.tra"
+
+	DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
+	COPY ~WarslingSniperKit/tra/english~				~weidu_external/WarslingSniperKit/tra/autotra/%LANGUAGE%~
+	COPY ~WarslingSniperKit/tra/%LANGUAGE%~				~weidu_external/WarslingSniperKit/tra/autotra/%LANGUAGE%~
 	END
-	ACTION_DEFINE_ARRAY Ad_noconvert BEGIN END
-		LAF HANDLE_CHARSETS
-		INT_VAR
-		infer_charset = 1
-		STR_VAR
-		tra_path = EVAL ~%MOD_FOLDER%/Tra~
-		noconvert_array = Ad_noconvert
-		reload_array = Ad_reload
+
+	LAF autotra_workaround END
+
+	ACTION_IF NOT GAME_IS ~bgee bg2ee eet~ BEGIN
+
+//			ACTION_DEFINE_ARRAY AD_noconvert BEGIN END
+
+		ACTION_DEFINE_ARRAY AD_reload BEGIN Setup END
+			LAF HANDLE_CHARSETS
+				INT_VAR
+				infer_charsets = 1
+				from_utf8      = 1
+				STR_VAR
+				tra_path = EVAL ~weidu_external/WarslingSniperKit/tra/autotra~
+				out_path = EVAL ~weidu_external/WarslingSniperKit/tra/autotra~
+				iconv_path = ~WarslingSniperKit/tra/autotra/iconv~
+//				noconvert_array = AD_noconvert
+				reload_array = AD_reload
+			END
+
 	END
 END
 
+AUTO_TRA ~weidu_external/WarslingSniperKit/tra/autotra/%s~
 
-LANGUAGE ~English~ ~english~ ~WarslingSniperKit/tra/english/setup.tra~
+LANGUAGE ~English~
+		 ~english~
+		 ~WarslingSniperKit/tra/english/setup.tra~
 
-LANGUAGE ~Francais~ ~french~ ~WarslingSniperKit/tra/french/setup.tra~
+LANGUAGE ~Français~
+		 ~french~
+		 ~WarslingSniperKit/tra/french/setup.tra~
 
-BEGIN @0  //Warsling Sniper Kit for Fighters
+BEGIN @4
 DESIGNATED 0
 LABEL ~Adam_Zsoldos_WarslingSniperKit~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ ~This mod need BG2, BG2EE, BGT or EET~
+SUBCOMPONENT @0  //Warsling Sniper Kit for Fighters
+REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 
-INCLUDE ~WarslingSniperKit/lib/a7#add_kit_ex.tpa~
+OUTER_SET WarslingSniperKit = 0
 
-LAF ADD_KIT_EX
-INT_VAR
-  kit_class = 2
-  lower     = RESOLVE_STR_REF(@1) /*~warsling sniper~*/
-  mixed     = RESOLVE_STR_REF(@2) /*~Warsling Sniper~*/
-  help      = RESOLVE_STR_REF(@3) /*~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
-
-Advantages:
--  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
--  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
-
-Disadvantages:
--  May not specialize in any weapon other than the sling
--  May not wear armor greater than studded leather
--  Hit Die: d8~*/
-STR_VAR
-  kit_name  = ~A0WS~
-  unusable  = ~0x0000C000~
-  hpclass = ~HPMONK~
-  briefdesc = 31252
-  biography = 15888
-  clascolr = ~28 93 91 91 93~
-  clasweap  = ~1           1           1           1           1           1           1           1~
-  weapprof  = ~1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 5 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
-  abclasrq  = ~9       0       0       0       0       0~
-  abclsmod  = ~0       0       0       0       0       0~
-  abdcdsrq  = ~17      0       0       0       0       0~
-  abdcscrq  = ~15      0       0       0       0       0~
-  alignmnt  = ~1       1       1       1       1       1       1       1       1~
-  dualclas  = ~0       1       1       1       1       0~
-  clab_path = EVAL ~%MOD_FOLDER%/2da/A0WS.2da~
-  kittable  = ~K_F_H K_F_D K_F_G K_F_E K_F_HE K_F_HL K_F_HO~
-  luabbr    = ~Fi0~
-  stweap    = ~LEAT14 * * BAG28 RING06 RING05,10 * BOOT02 AMUL19 BRAC16 BELT06 BULL03,40 BULL03,40 BULL03,40 POTN52,5 POTN04,2 POTN14,5 DAGG12 SW1H28 SLNG05~
-RET
-  kit_id
-END
-
-COPY ~WarslingSniperKit/r/A0WS01.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS02.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS02.EFF~ ~override~
-COPY ~WarslingSniperKit/r/A0WS03.EFF~ ~override~
-ADD_PROJECTILE ~WarslingSniperKit/r/A0WS03.PRO~
-COPY ~WarslingSniperKit/r/A0WS03.SPL~ ~override~
-	LPF ALTER_SPELL_HEADER
-		INT_VAR
-			check_headers = 1
-			projectile  = EVAL  ~%A0WS03%~
-	END
-// WRITE_SHORT 0x098 ~%A0WS03%~
-// WRITE_SHORT 0x0c0 ~%A0WS03%~
-// WRITE_SHORT 0x0e8 ~%A0WS03%~
-// WRITE_SHORT 0x110 ~%A0WS03%~
-// WRITE_SHORT 0x138 ~%A0WS03%~
-// WRITE_SHORT 0x160 ~%A0WS03%~
-// WRITE_SHORT 0x188 ~%A0WS03%~
-// WRITE_SHORT 0x1b0 ~%A0WS03%~
-// WRITE_SHORT 0x1d8 ~%A0WS03%~
-// WRITE_SHORT 0x200 ~%A0WS03%~
-// WRITE_SHORT 0x228 ~%A0WS03%~
+INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
 
-
-BEGIN ~~  //Warsling Sniper Kit for Fighters
+BEGIN @6
 DESIGNATED 1
-LABEL ~Adam_Zsoldos_WarslingSniperKit-All~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ ~This mod need BG2, BG2EE, BGT or EET~
-REQUIRE_COMPONENT ~WarslingSniperKit.tp2~ ~0~ ~Main component required~
-
-COPY ~WarslingSniperKit//2da/A0WS_2.2da~ ~override/A0WS.2da~
-
-COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
-COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
-ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
-COPY ~WarslingSniperKit/r/A0WS06.SPL~ ~override~
-	LPF ALTER_SPELL_HEADER
-		INT_VAR
-			check_headers = 1
-			projectile  = EVAL  ~%A0WS06%~
-	END
-// WRITE_SHORT 0x098 ~%A0WS06%~
-// WRITE_SHORT 0x0c0 ~%A0WS06%~
-// WRITE_SHORT 0x0e8 ~%A0WS06%~
-// WRITE_SHORT 0x110 ~%A0WS06%~
-// WRITE_SHORT 0x168 ~%A0WS06%~
-// WRITE_SHORT 0x160 ~%A0WS06%~
-// WRITE_SHORT 0x188 ~%A0WS06%~
-// WRITE_SHORT 0x1b0 ~%A0WS06%~
-// WRITE_SHORT 0x1d8 ~%A0WS06%~
-// WRITE_SHORT 0x200 ~%A0WS06%~
-// WRITE_SHORT 0x228 ~%A0WS06%~
-
-
-
-BEGIN ~Sans pourcentage de ricochet dès le niveau 2~  //Warsling Sniper Kit for Fighters
-DESIGNATED 2
-LABEL ~Adam_Zsoldos_WarslingSniperKit-Fault~
-SUBCOMPONENT ~Chance d'échec au niveau 24 pour le multiricochets~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ ~This mod need BG2, BG2EE, BGT or EET~
-REQUIRE_COMPONENT ~WarslingSniperKit.tp2~ ~0~ ~Main component required~
-
-COPY ~WarslingSniperKit//2da/A0WS_3.2da~ ~override/A0WS.2da~
-
-COPY ~WarslingSniperKit//2da/A0WS_3.2da~ ~override/A0WS.2da~
-
-COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
-COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
-ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
-COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
-	LPF ALTER_SPELL_HEADER
-		INT_VAR
-			check_headers = 1
-			projectile  = EVAL  ~%A0WS08%~
-	END
-
-/*
-COPY_EXISTING ~A0WS06.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT 
-		INT_VAR 
-			opcode=139
-			target=1
-			parameter1= RESOLVE_STR_REF (@53)
-		END
-*/
-
-BEGIN ~Avec pourcentage de ricochet dès le niveau 2~  //Warsling Sniper Kit for Fighters
-DESIGNATED 2
 LABEL ~Adam_Zsoldos_WarslingSniperKit-BG1-Fault~
-SUBCOMPONENT ~Chance d'échec au niveau 24 pour le multiricochets~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ ~This mod need BG2, BG2EE, BGT or EET~
-REQUIRE_COMPONENT ~WarslingSniperKit.tp2~ ~0~ ~Main component required~
+SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~bgee iwdee eet bgt~ @5
 
-COPY ~WarslingSniperKit//2da/A0WS_4.2da~ ~override/A0WS.2da~
+OUTER_SET WarslingSniperKit = 1
 
-COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
-COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
-ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
-COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
-	LPF ALTER_SPELL_HEADER
-		INT_VAR
-			check_headers = 1
-			projectile  = EVAL  ~%A0WS08%~
-	END
+INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
-COPY ~WarslingSniperKit/r/A0WS09.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS09.EFF~ ~override~
-COPY ~WarslingSniperKit/r/A0WS10.EFF~ ~override~
-ADD_PROJECTILE ~WarslingSniperKit/r/A0WS10.PRO~
-COPY ~WarslingSniperKit/r/A0WS10.SPL~ ~override~
-	LPF ALTER_SPELL_HEADER
-		INT_VAR
-			check_headers = 1
-			projectile  = EVAL  ~%A0WS10%~
-	END
+
+BEGIN @7
+DESIGNATED 2
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi~
+SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ @5
+
+OUTER_SET WarslingSniperKit = 2
+
+INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
+
+
+BEGIN @8
+DESIGNATED 3
+LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi_Fault~
+SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ @5
+
+OUTER_SET WarslingSniperKit = 3
+
+INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
+
+
+BEGIN @9
+DESIGNATED 4
+LABEL ~Adam_Zsoldos_WarslingSniperKit-All~
+SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ @5
+
+OUTER_SET WarslingSniperKit = 4
+
+INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 

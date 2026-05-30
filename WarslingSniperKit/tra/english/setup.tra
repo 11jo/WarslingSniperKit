@@ -11,3 +11,68 @@ Disadvantages:
 -  May not specialize in any weapon other than the sling
 -  May not wear armor greater than studded leather
 -  Hit Die: d8~
+
+@4 = ~Original version~
+@5 = ~This mod need BG2, BGEE, IWDEE, BG2EE, BGT or EET~
+@6 = ~Add a chance pourcentage to make a ricochet starting at level 2~
+@7 = ~Multiricochets starting at level 24~
+@8 = ~Multiricochets starting at level 24 with 5 % chance that one ricochet hit one ally~
+@9 = ~All of the above~
+
+@31 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
+
+Advantages:
+-  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+-  At level 2, he gains 5 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
+
+Disadvantages:
+-  May not specialize in any weapon other than the sling
+-  May not wear armor greater than studded leather
+-  Hit Die: d8~
+
+@32 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
+
+Advantages:
+-  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+-  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
+-  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
+
+Disadvantages:
+-  May not specialize in any weapon other than the sling
+-  May not wear armor greater than studded leather
+-  Hit Die: d8~
+
+@33 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
+
+Advantages:
+-  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+-  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
+-  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
+
+Disadvantages:
+-  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
+-  May not specialize in any weapon other than the sling
+-  May not wear armor greater than studded leather
+-  Hit Die: d8~
+
+@34 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
+
+Advantages:
+-  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+-  At level 2, he gains 5 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
+-  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
+
+Disadvantages:
+-  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
+-  May not specialize in any weapon other than the sling
+-  May not wear armor greater than studded leather
+-  Hit Die: d8~
+
