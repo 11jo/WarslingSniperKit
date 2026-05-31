@@ -56,7 +56,15 @@ RET
 END
 
 COPY ~WarslingSniperKit/r/A0WS01.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Bonus to hit and damage with missile weapons : 1~)
+		END
 COPY ~WarslingSniperKit/r/A0WS02.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Improved Ricochet~)
+		END
 COPY ~WarslingSniperKit/r/A0WS02.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS03.EFF~ ~override~
 ADD_PROJECTILE ~WarslingSniperKit/r/A0WS03.PRO~
@@ -86,6 +94,10 @@ COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS03.PRO~
 ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
 
 	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Abundance of ricochets~)
+		END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
@@ -178,6 +190,10 @@ COPY_EXISTING ~A0WS06.SPL~ ~override~
 ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize one additional ricochet~)
+		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS10.EFF~ ~override~
 
@@ -189,6 +205,10 @@ ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
 		END
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize two additional ricochets~)
+		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS11.EFF~ ~override~
 
@@ -204,6 +224,10 @@ END
 ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize three additional ricochets~)
+		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS12.EFF~ ~override~
 
@@ -215,6 +239,10 @@ ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 		END
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W13S.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize four additional ricochets~)
+		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W13S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS13.EFF~ ~override~
 
