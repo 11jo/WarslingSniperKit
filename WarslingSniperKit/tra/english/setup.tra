@@ -23,7 +23,7 @@ Disadvantages:
 @8 = ~Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity~
 
 // composant 4 (2)
-@9 = ~Progressive learning of ricochets : Add a chance pourcentage that one ricochet hit one nearby ally~
+@9 = ~Progressive learning of ricochets : Add a chance pourcentage that one of the ricochets hit one nearby ally~
 
 @10 = ~Ability : Improved Ricochet~
 @11 = ~Ability : Abundance of ricochets~
@@ -35,7 +35,12 @@ Disadvantages:
 
 @16 = ~This component need BG2, BGEE, BG2EE, BGT or EET~
 @17 = ~This component need WarslingSniperKit main component~
-@16 = ~This component need BGEE, BGT or EET~
+@18 = ~This component need BGEE, BGT or EET~
+
+@19 = ~Jaheira the warsling sniper~
+@20 = ~Montaron the warsling sniper~
+@21 = ~Yeslick the warsling sniper~
+@22 = ~Deder the warsling sniper~
 
 @31 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
 

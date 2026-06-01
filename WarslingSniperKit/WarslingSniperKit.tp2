@@ -102,7 +102,7 @@ INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
 
 
-BEGIN ~Jaheira the warsling sniper~
+BEGIN @19
 DESIGNATED 5
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Jaheira~
 REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @16
@@ -146,7 +146,7 @@ OUTER_SET proficiency_sling = 5
 	IF_EXISTS 
 
 
-BEGIN ~Montaron the warsling sniper~
+BEGIN @20
 DESIGNATED 6
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Montaron~
 REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @16
@@ -190,7 +190,7 @@ OUTER_SET proficiency_sling = 5
 	IF_EXISTS 
 
 
-BEGIN ~Yeslick the warsling sniper~
+BEGIN @21
 DESIGNATED 7
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Yeslick~
 REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @16
@@ -236,7 +236,7 @@ OUTER_SET proficiency_sling = 5
 	IF_EXISTS 
 
 
-BEGIN ~Deder from Candlekeep the warsling sniper~
+BEGIN @22
 DESIGNATED 8
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Deder~
 REQUIRE_PREDICATE GAME_IS ~bgee eet bgt~ @18

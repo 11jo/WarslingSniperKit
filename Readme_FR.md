@@ -28,7 +28,7 @@ Baldur's Gate II, Baldur's Gate: EE, Baldur's Gate II: EE, Icewind Dale: EE, Bal
 ## Description :
 ------------
 
-### Version originale
+#### Version originale
 
 La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
 
@@ -45,7 +45,9 @@ Inconvénients :
 
 #
 
-### Apprentissage progressif des ricochets
+#### Apprentissage progressif des ricochets
+
+<h6>
 
 Avantages supplémentaires :
 
@@ -63,25 +65,37 @@ Avantages supplémentaires :
 
 - À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et d'atteindre plusieurs ennemis à proximité.
 
+</h6>
+
 #
 
-### Ajouter seulement Abondance de ricochets : Nouvelle capacité passive à partir du 24ème niveau
+#### Ajouter seulement Abondance de ricochets : Nouvelle capacité passive à partir du 24ème niveau
+
+<h6>
 
 Avantage supplémentaire :
 
 - À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et d'atteindre plusieurs ennemis à proximité.
 
+</h6>
+
 #
 
-### Abondance de ricochets :  Ajouter 5 % de chance que l'un des ricochets touche un allié à proximité
+#### Abondance de ricochets :  Ajouter 5 % de chance que l'un des ricochets touche un allié à proximité
+
+<h6>
 
 Inconvénient supplémentaire :
 
 - La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
 
+</h6>
+
 #
 
-### Apprentissage progressif des ricochets : Ajouter un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé
+#### Apprentissage progressif des ricochets : Ajouter un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé
+
+<h6>
 
 Inconvénients supplémentaires :
 
@@ -89,14 +103,18 @@ Inconvénients supplémentaires :
 - 10 % de chance que l'un des ricochets touche un allié dans la mêlé, du niveau 18 à 23.
 - La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
 
+</h6>
+
+#
 
 
-## Install:
+
+## Installation :
 --------
 
-Extract archive contents into your game directory
-Run Setup-WarslingSniperKit.exe
-Follow the prompt
+Extraire l'archive dans le répertoire du jeu  
+Lancer Setup-WarslingSniperKit.exe  
+Suivre les indications  
 
 
 ## Version History:
@@ -127,3 +145,19 @@ v2.2:
 - Move readmes to readme folder and up english readme
 - Add iconv
 - Minor correction to the display of proficiencies during character creation and leveling up
+
+v3.0:
+- New optionnal components
+  - Progressive learning of ricochets
+  - Abundance of ricochets
+  - Jaheira the warsling sniper
+  - Montaron the warsling sniper
+  - Yeslick the warsling sniper
+  - Deder the warsling sniper
+- ALTER_SPELL_HEADER
+- a7#add_kit_ex
+- WeiDU Mod Packager by Argent77
+- Readmes
+- ini
+- Autotra / Handle_Charset
+- UTF8

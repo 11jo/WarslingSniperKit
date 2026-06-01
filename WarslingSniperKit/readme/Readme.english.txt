@@ -31,19 +31,42 @@ Disadvantages:
 - May not wear armor greater than studded leather
 - Hit Die: d8
 
-#### Add a chance pourcentage to make a ricochet starting at level 2
+#### Progressive learning of ricochets
+
+Additional advantages:
 
 -  At level 2, he gains 5 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target
+-  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target
+-  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target
 
-#### Abundance of ricochets starting at level 24
+- At level 12, he gains 30 % chance to make a second ricochet and hit two additional nearby foes
+- At level 14, he gains 60 % chance to make a second ricochet
+- At level 16, he gains 30 % chance to make a third ricochet and hit three additional nearby foes
+- At level 18, he gains 60 % chance to make a third ricochet
+- At level 20, he gains 30 % chance to make a fourth ricochet and hit four additional nearby foes
+- At level 22, he gains 60 % chance to make a fourth ricochet
 
 -  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
 
-#### Abundance of ricochets starting at level 24 with 5 % chance that one ricochet hit one ally
+#### Add only Abundance of ricochets : A new passive abillity starting at level 24
 
+Additional advantage:
+
+-  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
+
+#### Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity
+
+Additional Disadvantage:
+
+-  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
+
+#### Progressive learning of ricochets : Add a chance pourcentage that one of the ricochets hit one nearby ally
+
+Additional Disadvantages:
+
+-  20 % chance that one of the ricochets hit one nearby ally, from 12 to 17
+-  10 % chance that one of the ricochets hit one nearby ally, from 18 to 23
 -  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
 
 
@@ -82,3 +105,19 @@ v2.2:
 - Move file A0WS.2da to 2da folder
 - Move readmes to readme folder and up english readme
 - Add iconv
+
+v3.0:
+- New optionnal components
+  - Progressive learning of ricochets
+  - Abundance of ricochets
+  - Jaheira the warsling sniper
+  - Montaron the warsling sniper
+  - Yeslick the warsling sniper
+  - Deder the warsling sniper
+- ALTER_SPELL_HEADER
+- a7#add_kit_ex
+- WeiDU Mod Packager by Argent77
+- Readmes
+- ini
+- Autotra / Handle_Charset
+- UTF8

@@ -28,7 +28,7 @@ Baldur's Gate II, Baldur's Gate: EE, Baldur's Gate II: EE, Icewind Dale: EE, Bal
 ## Description:
 ------------
 
-### Original version
+#### Original version
 
 The sling is a difficult weapon to master, but in the hands of a
 warsling sniper it becomes a precise tool of war. Although slings
@@ -51,7 +51,9 @@ Disadvantages:
 
 #
 
-### Progressive learning of ricochets
+#### Progressive learning of ricochets
+
+<h6>
 
 Additional advantages:
 
@@ -69,25 +71,37 @@ Additional advantages:
 
 -  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
 
+</h6>
+
 #
 
-### Add only Abundance of ricochets : A new passive abillity starting at level 24
+#### Add only Abundance of ricochets : A new passive abillity starting at level 24
+
+<h6>
 
 Additional advantage:
 
 -  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
 
+</h6>
+
 #
 
-### Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity
+#### Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity
+
+<h6>
 
 Additional Disadvantage:
 
 -  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
 
+</h6>
+
 #
 
-### Progressive learning of ricochets : Add a chance pourcentage that one of the ricochets hit one nearby ally
+#### Progressive learning of ricochets : Add a chance pourcentage that one of the ricochets hit one nearby ally
+
+<h6>
 
 Additional Disadvantages:
 
@@ -95,14 +109,18 @@ Additional Disadvantages:
 -  10 % chance that one of the ricochets hit one nearby ally, from 18 to 23
 -  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
 
+</h6>
+
+#
+
 
 
 ## Install:
 --------
 
-Extract archive contents into your game directory
-Run Setup-WarslingSniperKit.exe
-Follow the prompt
+Extract archive contents into your game directory  
+Run Setup-WarslingSniperKit.exe  
+Follow the prompt  
 
 
 ## Version History:
@@ -133,3 +151,19 @@ v2.2:
 - Move readmes to readme folder and up english readme
 - Add iconv
 - Minor correction to the display of proficiencies during character creation and leveling up
+
+v3.0:
+- New optionnal components
+  - Progressive learning of ricochets
+  - Abundance of ricochets
+  - Jaheira the warsling sniper
+  - Montaron the warsling sniper
+  - Yeslick the warsling sniper
+  - Deder the warsling sniper
+- ALTER_SPELL_HEADER
+- a7#add_kit_ex
+- WeiDU Mod Packager by Argent77
+- Readmes
+- ini
+- Autotra / Handle_Charset
+- UTF8

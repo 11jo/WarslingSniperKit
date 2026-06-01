@@ -12,30 +12,55 @@ Description :
 
 #### Version originale
 
-FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
+La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
 
 Avantages :
+
 - Bonus de 1 au toucher et aux dégâts avec les armes à projectiles dès le premier niveau, puis tous les 4 niveaux.
 - À partir du 10ème niveau, le Frondeur d'élite acquiert la capacité passive Ricochet d'élite qui permet à tous les projectiles de rebondir sur leur cible et atteindre un nouvel ennemi à proximité.
 
 Inconvénients :
+
 - Ne peut se spécialiser avec une arme autre que la fronde.
 - Ne peut porter d'armure plus lourde que la besantine.
 – Dés de vie : d8
 
-#### Ajouter une chance d'effectuer un ricochet à partir du 2ème niveau
+#### Apprentissage progressif des ricochets
 
-- À partir du 2ème niveau, le Frondeur d'élite a 5 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
-- À partir du 4ème niveau, le Frondeur d'élite a 10 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
-- À partir du 6ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
-- À partir du 8ème niveau, le Frondeur d'élite a 70 % de chance d'effectuer un ricochet qui permet à sont projectile de rebondir sur sa cible et d'atteindre un autre ennemi à proximité.
+Avantages supplémentaires :
 
-#### Abondance de ricochets à partir du 24ème niveau
+- À partir du 2ème niveau, le Frondeur d'élite a 5 % de chance d'effectuer un ricochet et d'atteindre un autre ennemi à proximité.
+- À partir du 4ème niveau, le Frondeur d'élite a 10 % de chance d'effectuer un ricochet.
+- À partir du 6ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un ricochet.
+- À partir du 8ème niveau, le Frondeur d'élite a 70 % de chance d'effectuer un ricochet.
 
-- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et atteindre plusieurs ennemis à proximité.
+- À partir du 12ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
+- À partir du 14ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un second ricochet.
+- À partir du 16ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un troisième ricochet et de toucher une quatrième cible.
+- À partir du 18ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un troisième ricochet.
+- À partir du 20ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un quatrième ricochet et de toucher une cinquième cible.
+- À partir du 22ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un quatrième ricochet.
 
-#### Abondance de ricochets à partir du 24ème niveau avec 5 % de chance de toucher un allié à proximité
+- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et d'atteindre plusieurs ennemis à proximité.
 
+#### Ajouter seulement Abondance de ricochets : Nouvelle capacité passive à partir du 24ème niveau
+
+Avantage supplémentaire :
+
+- À partir du 24ème niveau, le Frondeur d'élite acquiert la capacité passive Abondance de ricochets qui permet à tous les projectiles de rebondir sur leur cible et d'atteindre plusieurs ennemis à proximité.
+
+#### Abondance de ricochets :  Ajouter 5 % de chance que l'un des ricochets touche un allié à proximité
+
+Inconvénient supplémentaire :
+
+- La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
+
+#### Apprentissage progressif des ricochets : Ajouter un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé
+
+Inconvénients supplémentaires :
+
+- 20 % de chance que l'un des ricochets touche un allié dans la mêlé, du niveau 12 à 17.
+- 10 % de chance que l'un des ricochets touche un allié dans la mêlé, du niveau 18 à 23.
 - La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
 
 
@@ -74,3 +99,20 @@ v2.2:
 - Move file A0WS.2da to 2da folder
 - Move readmes to readme folder and up english readme
 - Add iconv
+
+v3.0:
+- New optionnal components
+  - Progressive learning of ricochets
+  - Abundance of ricochets
+  - Jaheira the warsling sniper
+  - Montaron the warsling sniper
+  - Yeslick the warsling sniper
+  - Deder the warsling sniper
+- ALTER_SPELL_HEADER
+- a7#add_kit_ex
+- WeiDU Mod Packager by Argent77
+- Readmes
+- ini
+- Autotra / Handle_Charset
+- UTF8
+
