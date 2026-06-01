@@ -14,30 +14,49 @@ Disadvantages:
 
 @4 = ~Original version~
 @5 = ~This mod need BG2, BGEE, IWDEE, BG2EE, BGT or EET~
-@6 = ~Add a chance pourcentage to make a ricochet starting at level 2~
-@7 = ~Abundance of ricochets starting at level 24~
-@8 = ~Abundance of ricochets starting at level 24 with 5 % chance that one ricochet hit one ally~
-@9 = ~All of the above~
+
+// composant 2
+@6 = ~Add : Progressive learning of ricochets~
+
+@7 = ~Add only : Abundance of ricochets a new passive abillity starting at level 24~
+
+@8 = ~Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity~
+
+// composant 4 (2)
+@9 = ~Progressive learning of ricochets : Add a chance pourcentage that one ricochet hit one nearby ally~
+
+@10 = ~Ability : Improved Ricochet~
+@11 = ~Ability : Abundance of ricochets~
+
+@12 = ~Ability : Chance to realize one additional ricochet~
+@13 = ~Ability : Chance to realize two additional ricochets~
+@14 = ~Ability : Chance to realize three additional ricochets~
+// @15 = ~Ability : Chance to realize four additional ricochets~
+
+@16 = ~This component need BG2, BGEE, BG2EE, BGT or EET~
+@17 = ~This component need WarslingSniperKit main component~
+@16 = ~This component need BGEE, BGT or EET~
 
 @31 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
 
 Advantages:
 -  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+
 -  At level 2, he gains 5 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target
+-  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target
+-  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target
+
 -  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
-- À partir du 12ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
-- À partir du 16ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
-- À partir du 20ème niveau, le Frondeur d'élite a 100 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
-- À partir du 24ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un troisième ricochet et de toucher une quatrième cible.
-- À partir du 28ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un troisième ricochet et de toucher une quatrième cible.
-- À partir du 32ème niveau, le Frondeur d'élite a 100 % de chance d'effectuer un troisième ricochet et de toucher une quatrième cible.
-- À partir du 36ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un quatrième ricochet et de toucher une cinquième cible.
-- À partir du 40ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un quatrième ricochet et de toucher une cinquième cible.
-- À partir du 44ème niveau, le Frondeur d'élite a 100 % de chance d'effectuer un quatrième ricochet et de toucher une cinquième cible.
-- À partir du 48ème niveau, le Frondeur d'élite a 100 % de chance d'effectuer un cinquième ricochet et de toucher une sixième cible.
+
+- At level 12, he gains 30 % chance to make a second ricochet and hit two additional nearby foes
+- At level 14, he gains 60 % chance to make a second ricochet
+- At level 16, he gains 30 % chance to make a third ricochet and hit three additional nearby foes
+- At level 18, he gains 60 % chance to make a third ricochet
+- At level 20, he gains 30 % chance to make a fourth ricochet and hit four additional nearby foes
+- At level 22, he gains 60 % chance to make a fourth ricochet
+
+-  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
 
 Disadvantages:
 -  May not specialize in any weapon other than the sling
@@ -72,18 +91,27 @@ Disadvantages:
 @34 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
 
 Advantages:
--  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward
+-  +1 bonus to hit and damage with missile weapons at first level and every 4 levels afterward.
+
 -  At level 2, he gains 5 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
--  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target and hit one additional nearby foe
+-  At level 4, he gains 10 % chance that a fired missiles bounce off their primary target
+-  At level 6, he gains 30 % chance that a fired missiles bounce off their primary target
+-  At level 8, he gains 70 % chance that a fired missiles bounce off their primary target
+
 -  At 10th level he gains the Improved Ricochet passive ability which allows all fired missiles to bounce off their primary target and hit one additional nearby foe
-- À partir du 12ème niveau, le Frondeur d'élite a 30 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
-- À partir du 16ème niveau, le Frondeur d'élite a 60 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
-- À partir du 20ème niveau, le Frondeur d'élite a 100 % de chance d'effectuer un second ricochet et de toucher une troisième cible.
+
+- At level 12, he gains 30 % chance to make a second ricochet and hit two additional nearby foes
+- At level 14, he gains 60 % chance to make a second ricochet
+- At level 16, he gains 30 % chance to make a third ricochet and hit three additional nearby foes
+- At level 18, he gains 60 % chance to make a third ricochet
+- At level 20, he gains 30 % chance to make a fourth ricochet and hit four additional nearby foes
+- At level 22, he gains 60 % chance to make a fourth ricochet
+
 -  At level 24, he gains the Abundance of Ricochets passive ability which allows all fired missiles to bounce off their primary target and hit several nearby foes
 
 Disadvantages:
+-  20 % chance that one of the ricochets hit one nearby ally, from 12 to 17
+-  10 % chance that one of the ricochets hit one nearby ally, from 18 to 23
 -  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
 -  May not specialize in any weapon other than the sling
 -  May not wear armor greater than studded leather

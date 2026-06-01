@@ -63,7 +63,7 @@ COPY ~WarslingSniperKit/r/A0WS01.SPL~ ~override~
 COPY ~WarslingSniperKit/r/A0WS02.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Improved Ricochet~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@10 /* Ability : Improved Ricochet */)
 		END
 COPY ~WarslingSniperKit/r/A0WS02.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS03.EFF~ ~override~
@@ -91,12 +91,13 @@ COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS03.PRO~
   WRITE_SHORT 0x200 THIS | BIT4
 
 
-ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
+ACTION_IF WarslingSniperKit > 0 THEN BEGIN
 
+// Level 24 (multishot) (remove others supplementary ricochets)
 	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Abundance of ricochets~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@11 /* Ability : Abundance of ricochets */)
 		END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
@@ -157,8 +158,9 @@ COPY_EXISTING ~A0WS06.PRO~ ~override/A0WS06.PRO~
 END
 
 
-ACTION_IF WarslingSniperKit = 3 OR WarslingSniperKit = 4 THEN BEGIN
+ACTION_IF WarslingSniperKit > 2 THEN BEGIN
 
+// Level 24 (5 % echec)
 COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
 COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
 COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
@@ -187,12 +189,13 @@ COPY_EXISTING ~A0WS06.SPL~ ~override~
 */
 
 
-ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
+ACTION_IF WarslingSniperKit > 1 THEN BEGIN
 
+// Level 12
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize one additional ricochet~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@12 /* Ability : Chance to realize one additional ricochet */)
 		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS10.EFF~ ~override~
@@ -204,10 +207,12 @@ ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
 				projectile  = EVAL  ~%A0WS03%~
 		END
 
+// Level 16
+
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize two additional ricochets~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@13 /* Ability : Chance to realize two additional ricochets */)
 		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS11.EFF~ ~override~
@@ -219,14 +224,11 @@ ACTION_IF WarslingSniperKit = 1 OR WarslingSniperKit = 4 THEN BEGIN
 				projectile  = EVAL  ~%A0WS03%~
 		END
 
-END
-
-ACTION_IF WarslingSniperKit = 1 THEN BEGIN
-
+// Level 20
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize three additional ricochets~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@14 /* Ability : Chance to realize three additional ricochets */)
 		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS12.EFF~ ~override~
@@ -237,11 +239,13 @@ ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 				check_headers = 1
 				projectile  = EVAL  ~%A0WS03%~
 		END
+/*
+Deprecated, by multishot level 24
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W13S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Ability : Chance to realize four additional ricochets~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@15 /* Ability : Chance to realize four additional ricochets */)
 		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W13S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS13.EFF~ ~override~
@@ -252,7 +256,7 @@ ACTION_IF WarslingSniperKit = 1 THEN BEGIN
 				check_headers = 1
 				projectile  = EVAL  ~%A0WS03%~
 		END
-
+*/
 END
 
 /*

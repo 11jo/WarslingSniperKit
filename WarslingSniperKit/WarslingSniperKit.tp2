@@ -60,9 +60,9 @@ INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
 BEGIN @6
 DESIGNATED 1
-LABEL ~Adam_Zsoldos_WarslingSniperKit-Pourcentage~
+LABEL ~Adam_Zsoldos_WarslingSniperKit-All_Pourcentage~
 SUBCOMPONENT @0
-REQUIRE_PREDICATE GAME_IS ~bgee iwdee eet bgt~ @5
+REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 
 OUTER_SET WarslingSniperKit = 1
 
@@ -73,7 +73,7 @@ BEGIN @7
 DESIGNATED 2
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi~
 SUBCOMPONENT @0
-REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ @5
+REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 
 OUTER_SET WarslingSniperKit = 2
 
@@ -83,8 +83,7 @@ INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 BEGIN @8
 DESIGNATED 3
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi_Fault~
-SUBCOMPONENT @0
-REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ @5
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~ ~~
 
 OUTER_SET WarslingSniperKit = 3
 
@@ -93,11 +92,10 @@ INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
 BEGIN @9
 DESIGNATED 4
-LABEL ~Adam_Zsoldos_WarslingSniperKit-All~
-SUBCOMPONENT @0
-REQUIRE_PREDICATE GAME_IS ~tob bg2ee eet bgt~ @5
+LABEL ~Adam_Zsoldos_WarslingSniperKit-All_Fault~
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~ ~~
 
-OUTER_SET WarslingSniperKit = 4
+OUTER_SET WarslingSniperKit = 2
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
@@ -107,7 +105,8 @@ INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 BEGIN ~Jaheira the warsling sniper~
 DESIGNATED 5
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Jaheira~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @5
+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @16
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~ OR MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~ OR MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~ @17
 
 // Borrowed from Charlatan Kit by Raduziel
 
@@ -150,7 +149,8 @@ OUTER_SET proficiency_sling = 5
 BEGIN ~Montaron the warsling sniper~
 DESIGNATED 6
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Montaron~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @5
+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @16
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~ OR MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~ OR MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~ @17
 
 // Borrowed from Charlatan Kit by Raduziel
 
@@ -193,7 +193,10 @@ OUTER_SET proficiency_sling = 5
 BEGIN ~Yeslick the warsling sniper~
 DESIGNATED 7
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Yeslick~
-REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @5
+REQUIRE_PREDICATE GAME_IS ~tob bgee bg2ee eet bgt~ @16
+REQUIRE_PREDICATE	(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~) ||
+					(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~) ||
+					(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~) @17
 
 // Borrowed from Charlatan Kit by Raduziel
 
@@ -236,7 +239,8 @@ OUTER_SET proficiency_sling = 5
 BEGIN ~Deder from Candlekeep the warsling sniper~
 DESIGNATED 8
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Deder~
-REQUIRE_PREDICATE GAME_IS ~bgee eet bgt~ @5
+REQUIRE_PREDICATE GAME_IS ~bgee eet bgt~ @18
+REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~ OR MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~ OR MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~ @17
 
 // Borrowed from Charlatan Kit by Raduziel
 
