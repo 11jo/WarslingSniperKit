@@ -81,19 +81,7 @@ Avantage supplémentaire :
 
 #
 
-#### Abondance de ricochets :  Ajouter 5 % de chance que l'un des ricochets touche un allié à proximité
-
-<h6>
-
-Inconvénient supplémentaire :
-
-- La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
-
-</h6>
-
-#
-
-#### Apprentissage progressif des ricochets : Ajouter un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé
+#### Apprentissage progressif des ricochets : Avec un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé
 
 <h6>
 
@@ -101,6 +89,18 @@ Inconvénients supplémentaires :
 
 - 20 % de chance que l'un des ricochets touche un allié dans la mêlé, du niveau 12 à 17.
 - 10 % de chance que l'un des ricochets touche un allié dans la mêlé, du niveau 18 à 23.
+- La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
+
+</h6>
+
+#
+
+#### Abondance de ricochets :  Avec 5 % de chance que l'un des ricochets touche un allié à proximité
+
+<h6>
+
+Inconvénient supplémentaire :
+
 - La capacité passive Abondance de ricochets a 5 % de chance de toucher un allié à proximité.
 
 </h6>

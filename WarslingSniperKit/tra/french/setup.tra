@@ -12,20 +12,23 @@ Inconvénients :
 - Ne peut porter d'armure plus lourde que la besantine.
 – Dés de vie : d8~
 
-@4 = ~Version originale~
+@4 = ~Version originale
+~
 @5 = ~Ce mod nécessite BG2, BGEE, IWDEE, BG2EE, BGT ou EET~
 
-// composant 2
-@6 = ~Ajouter : Apprentissage progressif des ricochets~
+@6 = ~Ajouter : Apprentissage progressif des ricochets
+~
 
-// composant 3
-@7 = ~Ajouter seulement : Abondance de ricochets une nouvelle capacité passive à partir du 24ème niveau~
+@7 = ~Ajouter seulement : Abondance de ricochets une nouvelle capacité passive à partir du 24ème niveau
+~
 
-// composant 4 (3)
-@8 = ~Abondance de ricochets :  Ajouter 5 % de chance que l'un des ricochets touche un allié à proximité~
+@8 = ~Ajouter seulement : Abondance de ricochets une nouvelle capacité passive à partir du 24ème niveau
+- Avec 5 % de chance que l'un des ricochets touche un allié à proximité
+~
 
-// composant 4 (2)
-@9 = ~Apprentissage progressif des ricochets : Ajouter un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé~
+@9 = ~Ajouter : Apprentissage progressif des ricochets
+- Avec un pourcentage de chance que l'un des ricochets touche un allié dans la mêlé
+~
 
 @10 = ~Capacité : Ricochet~
 @11 = ~Capacité : Abondance de ricochets~
@@ -43,6 +46,8 @@ Inconvénients :
 @20 = ~Montaron le Frondeur d'élite~
 @21 = ~Yeslick le Frondeur d'élite~
 @22 = ~Deder le Frondeur d'élite~
+
+@23 = ~Bonus de 1 au toucher et aux dégâts avec les armes à projectiles : 1~
 
 @31 = ~FRONDEUR D'ÉLITE : La fronde est difficile à maîtriser, mais dans les mains d'un frondeur d'élite, elle devient une arme de haute précision. Bien que les frondes soient communément associées et utilisées par les petites-personnes, elles sont accessibles à toutes les races.
 

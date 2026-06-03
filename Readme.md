@@ -87,19 +87,7 @@ Additional advantage:
 
 #
 
-#### Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity
-
-<h6>
-
-Additional Disadvantage:
-
--  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
-
-</h6>
-
-#
-
-#### Progressive learning of ricochets : Add a chance pourcentage that one of the ricochets hit one nearby ally
+#### Progressive learning of ricochets : With a chance pourcentage that one of the ricochets hit one nearby ally
 
 <h6>
 
@@ -112,6 +100,18 @@ Additional Disadvantages:
 </h6>
 
 #
+
+#### Abundance of ricochets : With 5 % chance that one of the ricochets hit one ally at proximity
+
+<h6>
+
+Additional Disadvantage:
+
+-  Abundance of Ricochets passive ability have 5 % chance that one ricochet hit one nearby ally
+
+</h6>
+
+#256398
 
 
 

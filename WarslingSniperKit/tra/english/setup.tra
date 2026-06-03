@@ -12,18 +12,23 @@ Disadvantages:
 -  May not wear armor greater than studded leather
 -  Hit Die: d8~
 
-@4 = ~Original version~
+@4 = ~Original version
+~
 @5 = ~This mod need BG2, BGEE, IWDEE, BG2EE, BGT or EET~
 
-// composant 2
-@6 = ~Add : Progressive learning of ricochets~
+@6 = ~Add : Progressive learning of ricochets
+~
 
-@7 = ~Add only : Abundance of ricochets a new passive abillity starting at level 24~
+@7 = ~Add only : Abundance of ricochets a new passive abillity starting at level 24
+~
 
-@8 = ~Abundance of ricochets : Add 5 % chance that one of the ricochets hit one ally at proximity~
+@8 = ~Add only : Abundance of ricochets a new passive abillity starting at level 24
+- With 5 % chance that one of the ricochets hit one ally at proximity
+~
 
-// composant 4 (2)
-@9 = ~Progressive learning of ricochets : Add a chance pourcentage that one of the ricochets hit one nearby ally~
+@9 = ~Add : Progressive learning of ricochets
+- With a chance pourcentage that one of the ricochets hit one nearby ally
+~
 
 @10 = ~Ability : Improved Ricochet~
 @11 = ~Ability : Abundance of ricochets~
@@ -41,6 +46,8 @@ Disadvantages:
 @20 = ~Montaron the warsling sniper~
 @21 = ~Yeslick the warsling sniper~
 @22 = ~Deder the warsling sniper~
+
+@23 = ~Bonus to hit and damage with missile weapons : 1~
 
 @31 = ~WARSLING SNIPER: The sling is a difficult weapon to master, but in the hands of a warsling sniper it becomes a precise tool of war. Although slings are commonly associated with and used by the hin, experts of the weapon may indeed come from any race.
 

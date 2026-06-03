@@ -1,19 +1,31 @@
-ACTION_IF WarslingSniperKit = 0 THEN BEGIN
+ACTION_IF WarslingSniperKit = 1 THEN BEGIN
+
 	OUTER_SET help = RESOLVE_STR_REF(@3)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_0"
-END ELSE ACTION_IF WarslingSniperKit = 1 THEN BEGIN
+	
+END ELSE ACTION_IF WarslingSniperKit = 2 AND WarslingSniperKit_Fault = 0 THEN BEGIN
+
 	OUTER_SET help = RESOLVE_STR_REF(@31)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_1"
-END ELSE ACTION_IF WarslingSniperKit = 2 THEN BEGIN
+	
+END ELSE ACTION_IF WarslingSniperKit = 3 AND WarslingSniperKit_Fault = 0 THEN BEGIN
+
 	OUTER_SET help = RESOLVE_STR_REF(@32)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_2"
-END ELSE ACTION_IF WarslingSniperKit = 3 THEN BEGIN
+	
+END ELSE ACTION_IF WarslingSniperKit_Fault = 1 THEN BEGIN
+
 	OUTER_SET help = RESOLVE_STR_REF(@33)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_3"
-END ELSE ACTION_IF WarslingSniperKit = 4 THEN BEGIN
+	
+END ELSE ACTION_IF WarslingSniperKit_Fault = 2 THEN BEGIN
+
 	OUTER_SET help = RESOLVE_STR_REF(@34)
 	OUTER_SPRINT "WarslingSniperKit_A0WS" "A0WS_4"
+
 END
+
+//
 
 INCLUDE ~WarslingSniperKit/lib/a7#add_kit_ex.tpa~
 
@@ -36,8 +48,8 @@ STR_VAR
   kit_name  = ~A0WS~
   unusable  = ~0x0000C000~
   hpclass = ~HPMONK~
-  briefdesc = 31252
-  biography = 15888
+//  briefdesc = 31252
+//  biography = 15888
   clascolr = ~28 93 91 91 93~
   clasweap  = ~1           1           1           1           1           1           1           1~
   weapprof  = ~1 1 1 1 1 1 1 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 5 2 2 2 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0~
@@ -55,10 +67,11 @@ RET
   kit_id
 END
 
+
 COPY ~WarslingSniperKit/r/A0WS01.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (~Bonus to hit and damage with missile weapons : 1~)
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@23 /* Bonus to hit and damage with missile weapons : 1 */)
 		END
 COPY ~WarslingSniperKit/r/A0WS02.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
@@ -90,106 +103,9 @@ COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS03.PRO~
   WRITE_LONG 0x2c THIS | BIT0
   WRITE_SHORT 0x200 THIS | BIT4
 
+// All_Pourcentage
 
-ACTION_IF WarslingSniperKit > 0 THEN BEGIN
-
-// Level 24 (multishot) (remove others supplementary ricochets)
-	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@11 /* Ability : Abundance of ricochets */)
-		END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode   = 321
-			target   = 2
-		STR_VAR
-			resource = A0WS03
-	END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode   = 321
-			target   = 2
-		STR_VAR
-			resource = A0WS02
-	END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode   = 321
-			target   = 2
-		STR_VAR
-			resource = A0WS10
-	END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode   = 321
-			target   = 2
-		STR_VAR
-			resource = A0WS11
-	END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode   = 321
-			target   = 2
-		STR_VAR
-			resource = A0WS12
-	END
-	LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode   = 321
-			target   = 2
-		STR_VAR
-			resource = A0WS13
-	END
-	COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
-	COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
-	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
-	COPY ~WarslingSniperKit/r/A0WS06.SPL~ ~override~
-		LPF ALTER_SPELL_HEADER
-			INT_VAR
-				check_headers = 1
-				projectile  = EVAL  ~%A0WS06%~
-		END
-
-COPY_EXISTING ~A0WS06.PRO~ ~override/A0WS06.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
-
-END
-
-
-ACTION_IF WarslingSniperKit > 2 THEN BEGIN
-
-// Level 24 (5 % echec)
-COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
-COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
-COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
-ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
-COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
-	LPF ALTER_SPELL_HEADER
-		INT_VAR
-			check_headers = 1
-			projectile  = EVAL  ~%A0WS08%~
-	END
-
-COPY_EXISTING ~A0WS08.PRO~ ~override/A0WS08.PRO~
-  WRITE_LONG 0x2c THIS | BIT0
-  WRITE_SHORT 0x200 THIS | BIT4
-
-END
-
-/*
-COPY_EXISTING ~A0WS06.SPL~ ~override~
-		LPF ADD_SPELL_EFFECT 
-		INT_VAR 
-			opcode=139
-			target=1
-			parameter1= RESOLVE_STR_REF (@53)
-		END
-*/
-
-
-ACTION_IF WarslingSniperKit > 1 THEN BEGIN
+ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 
 // Level 12
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.SPL~ ~override~
@@ -257,7 +173,125 @@ Deprecated, by multishot level 24
 				projectile  = EVAL  ~%A0WS03%~
 		END
 */
-END
+END // WarslingSniperKit = 2
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// All_Pourcentage and Multi
+
+ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 THEN BEGIN
+
+// Level 24 (multishot) (remove others supplementary ricochets)
+	COPY ~WarslingSniperKit/r/A0WS04.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@11 /* Ability : Abundance of ricochets */)
+		END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS03
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS02
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS10
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS11
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS12
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 2
+		STR_VAR
+			resource = A0WS13
+	END
+	COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
+	COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
+	ADD_PROJECTILE ~WarslingSniperKit/r/A0WS06.PRO~
+	COPY ~WarslingSniperKit/r/A0WS06.SPL~ ~override~
+		LPF ALTER_SPELL_HEADER
+			INT_VAR
+				check_headers = 1
+				projectile  = EVAL  ~%A0WS06%~
+		END
+
+COPY_EXISTING ~A0WS06.PRO~ ~override/A0WS06.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+END // WarslingSniperKit = 2 OR WarslingSniperKit = 3
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// All_Fault and Multi_Fault
+
+ACTION_IF WarslingSniperKit_Fault = 1 OR WarslingSniperKit_Fault = 2 THEN BEGIN
+
+// Level 24 (5 % echec)
+COPY ~WarslingSniperKit/r/A0WS07.SPL~ ~override~
+COPY ~WarslingSniperKit/r/A0WS07.EFF~ ~override~
+COPY ~WarslingSniperKit/r/A0WS08.EFF~ ~override~
+ADD_PROJECTILE ~WarslingSniperKit/r/A0WS08.PRO~
+COPY ~WarslingSniperKit/r/A0WS08.SPL~ ~override~
+	LPF ALTER_SPELL_HEADER
+		INT_VAR
+			check_headers = 1
+			projectile  = EVAL  ~%A0WS08%~
+	END
+
+COPY_EXISTING ~A0WS08.PRO~ ~override/A0WS08.PRO~
+  WRITE_LONG 0x2c THIS | BIT0
+  WRITE_SHORT 0x200 THIS | BIT4
+
+
+END // WarslingSniperKit_Fault = 1 OR WarslingSniperKit_Fault = 2
+
+/*
+COPY_EXISTING ~A0WS06.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT 
+		INT_VAR 
+			opcode=139
+			target=1
+			parameter1= RESOLVE_STR_REF (@53)
+		END
+*/
+////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
 
