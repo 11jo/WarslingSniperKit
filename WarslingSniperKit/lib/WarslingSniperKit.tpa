@@ -216,7 +216,21 @@ ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 THEN BEGIN
 			opcode   = 321
 			target   = 1
 		STR_VAR
+			resource = A0W10S
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 1
+		STR_VAR
 			resource = A0WS11
+	END
+	LPF ADD_SPELL_EFFECT
+		INT_VAR
+			opcode   = 321
+			target   = 1
+		STR_VAR
+			resource = A0W11S
 	END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
@@ -230,7 +244,7 @@ ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 THEN BEGIN
 			opcode   = 321
 			target   = 1
 		STR_VAR
-			resource = A0WS13
+			resource = A0W13S
 	END
 	COPY ~WarslingSniperKit/r/A0WS04.EFF~ ~override~
 	COPY ~WarslingSniperKit/r/A0WS06.EFF~ ~override~
