@@ -193,42 +193,42 @@ ACTION_IF WarslingSniperKit = 2 OR WarslingSniperKit = 3 THEN BEGIN
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
-			target   = 2
+			target   = 1
 		STR_VAR
 			resource = A0WS03
 	END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
-			target   = 2
+			target   = 1
 		STR_VAR
 			resource = A0WS02
 	END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
-			target   = 2
+			target   = 1
 		STR_VAR
 			resource = A0WS10
 	END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
-			target   = 2
+			target   = 1
 		STR_VAR
 			resource = A0WS11
 	END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
-			target   = 2
+			target   = 1
 		STR_VAR
 			resource = A0WS12
 	END
 	LPF ADD_SPELL_EFFECT
 		INT_VAR
 			opcode   = 321
-			target   = 2
+			target   = 1
 		STR_VAR
 			resource = A0WS13
 	END

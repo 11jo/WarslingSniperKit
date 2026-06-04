@@ -54,12 +54,6 @@ DESIGNATED 0
 LABEL ~Adam_Zsoldos_WarslingSniperKit~
 SUBCOMPONENT @0  //Warsling Sniper Kit for Fighters
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
-REQUIRE_PREDICATE	(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~3~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~4~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~5~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~6~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~7~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~8~) ~Component Fault are installed : No change allowed~
 
 OUTER_SET WarslingSniperKit = 1
 OUTER_SET WarslingSniperKit_Fault = 0
@@ -73,12 +67,6 @@ DESIGNATED 1
 LABEL ~Adam_Zsoldos_WarslingSniperKit-All_Pourcentage~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
-REQUIRE_PREDICATE	(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~3~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~4~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~5~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~6~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~7~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~8~) ~Component Fault are installed : No change allowed~
 
 OUTER_SET WarslingSniperKit = 2
 OUTER_SET WarslingSniperKit_Fault = 0
@@ -92,12 +80,6 @@ DESIGNATED 2
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
-REQUIRE_PREDICATE	(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~3~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~4~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~5~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~6~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~7~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~8~) ~Component Fault are installed : No change allowed~
 
 OUTER_SET WarslingSniperKit = 3
 OUTER_SET WarslingSniperKit_Fault = 0
@@ -110,11 +92,8 @@ BEGIN @9
 DESIGNATED 3
 LABEL ~Adam_Zsoldos_WarslingSniperKit-All_Fault~
 SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 // REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~ ~~
-REQUIRE_PREDICATE	(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~5~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~6~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~7~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~8~) ~Component kit for NPC are installed : No change allowed~
 
 OUTER_SET WarslingSniperKit = 2
 OUTER_SET WarslingSniperKit_Fault = 2
@@ -127,11 +106,8 @@ BEGIN @8
 DESIGNATED 4
 LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi_Fault~
 SUBCOMPONENT @0
+REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 // REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~ ~~
-REQUIRE_PREDICATE 	(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~5~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~6~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~7~) ||
-					(NOT MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~8~) ~Component kit for NPC are installed : No change allowed~
 
 OUTER_SET WarslingSniperKit = 3
 OUTER_SET WarslingSniperKit_Fault = 1
