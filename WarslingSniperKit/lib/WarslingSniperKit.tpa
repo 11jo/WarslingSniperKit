@@ -72,18 +72,18 @@ COPY ~WarslingSniperKit/r/JOMAGSTN.BAM~ ~override~
 
 COPY ~WarslingSniperKit/r/A0WS01.SPL~ ~override~
 	LPF ADD_SPELL_EFFECT
-	INT_VAR
-		opcode=139
-		target=1
-		parameter1= RESOLVE_STR_REF (@23 /* Bonus to hit and damage with missile weapons : 1 */)
+		INT_VAR
+			opcode=139
+			target=1
+			parameter1= RESOLVE_STR_REF (@23 /* Bonus to hit and damage with missile weapons : 1 */)
 	END
 
 COPY ~WarslingSniperKit/r/A0WS02.SPL~ ~override~
 	LPF ADD_SPELL_EFFECT
-	INT_VAR
-		opcode=139
-		target=1
-		parameter1= RESOLVE_STR_REF (@10 /* Ability : Improved Ricochet */)
+		INT_VAR
+			opcode=139
+			target=1
+			parameter1= RESOLVE_STR_REF (@10 /* Ability : Improved Ricochet */)
 	END
 
 COPY ~WarslingSniperKit/r/A0WS02.EFF~ ~override~
@@ -96,7 +96,7 @@ COPY ~WarslingSniperKit/r/A0WS03.SPL~ ~override~
 			projectile  = EVAL  ~%A0WS03%~
 	END
 
-COPY_EXISTING ~A0WS03.PRO~ ~override~
+COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS03.PRO~
   WRITE_LONG 0x2c THIS | BIT0
   WRITE_SHORT 0x200 THIS | BIT4 | BIT6 | BIT15
   WRITE_SHORT 0x21a IDS_OF_SYMBOL ("MISSILE" "A0WS00") // Bouncing projectile : red colored after hitting first target
@@ -105,13 +105,23 @@ COPY_EXISTING ~A0WS03.PRO~ ~override~
 
 ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 
+/*
+	COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS22.PRO~ // Same as A0WS03 but without A0WS00 so no visual
+			WRITE_LONG 0x2c THIS | BIT0
+			WRITE_SHORT 0x200 THIS | BIT4 | BIT6 | BIT15
+			WRITE_SHORT 0x204 128 // Only 15 foot / 4.5 m
+			WRITE_SHORT 0x206 128 // Only 15 foot / 4.5 m
+			WRITE_SHORT 0x21a IDS_OF_SYMBOL ("MISSILE" "NONE") // Bouncing projectile : No animation
+		ADD_PROJECTILE ~override/A0WS22.PRO~
+*/
+
 // Level 12
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode=139
-			target=1
-			parameter1= RESOLVE_STR_REF (@12 /* Ability : Chance to realize one additional ricochet */)
+			INT_VAR
+				opcode=139
+				target=1
+				parameter1= RESOLVE_STR_REF (@12 /* Ability : Chance to realize one additional ricochet */)
 		END
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W10S.EFF~ ~override~
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS10.EFF~ ~override~
@@ -127,8 +137,22 @@ ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode=139 target=1 parameter1= RESOLVE_STR_REF (@13 /* Ability : Chance to realize two additional ricochets */)
+			INT_VAR
+				opcode   = 321 target   = 1
+			STR_VAR
+				resource = A0WS10
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 321 target   = 1
+			STR_VAR
+				resource = A0W10S
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode=139
+				target=1
+				parameter1= RESOLVE_STR_REF (@13 /* Ability : Chance to realize two additional ricochets */)
 		END
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W11S.EFF~ ~override~
@@ -137,17 +161,42 @@ ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS11.SPL~ ~override~
 		LPF ALTER_SPELL_HEADER
 			INT_VAR
-				check_headers = 1
 				projectile  = EVAL  ~%A0WS03%~
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode=177
+				target=2
+			STR_VAR
+				resource = A0W10S
+			END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode=177
+				target=2
+			STR_VAR
+				resource = A0WS10
 		END
 
 // Level 20
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
-		INT_VAR
-			opcode=139
-			target=1
-			parameter1= RESOLVE_STR_REF (@14 /* Ability : Chance to realize three additional ricochets */)
+			INT_VAR
+				opcode   = 321 target   = 1
+			STR_VAR
+				resource = A0WS11
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 321 target   = 1
+			STR_VAR
+				resource = A0W11S
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode=139
+				target=1
+				parameter1= RESOLVE_STR_REF (@14 /* Ability : Chance to realize three additional ricochets */)
 		END
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0W12S.EFF~ ~override~
@@ -159,14 +208,20 @@ ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 				check_headers = 1
 				projectile  = EVAL  ~%A0WS03%~
 		END
-
-	COPY_EXISTING ~A0WS03.PRO~ ~override/A0WS22.PRO~ // Same as A0WS03 but without A0WS00 so no visual
-			WRITE_LONG 0x2c THIS | BIT0
-			WRITE_SHORT 0x200 THIS | BIT4 | BIT6 | BIT15
-			WRITE_SHORT 0x204 128 // Only 15 foot / 4.5 m
-			WRITE_SHORT 0x206 128 // Only 15 foot / 4.5 m
-			WRITE_SHORT 0x21a IDS_OF_SYMBOL ("MISSILE" "NONE") // Bouncing projectile : No animation
-		ADD_PROJECTILE ~override/A0WS22.PRO~
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode=177
+				target=2
+			STR_VAR
+				resource = A0W11S
+			END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode=177
+				target=2
+			STR_VAR
+				resource = A0WS11
+		END
 
 /*
 Deprecated, by multishot level 24
