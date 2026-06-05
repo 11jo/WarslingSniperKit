@@ -11,8 +11,8 @@ ASK_EVERY_COMPONENT
 ALWAYS
 
 	DEFINE_ACTION_FUNCTION autotra_workaround BEGIN
-	COPY ~WarslingSniperKit/tra/english~				~weidu_external/WarslingSniperKit/tra/autotra/%LANGUAGE%~
-	COPY ~WarslingSniperKit/tra/%LANGUAGE%~				~weidu_external/WarslingSniperKit/tra/autotra/%LANGUAGE%~
+		COPY ~WarslingSniperKit/tra/english~				~weidu_external/WarslingSniperKit/tra/autotra/%LANGUAGE%~
+		COPY ~WarslingSniperKit/tra/%LANGUAGE%~				~weidu_external/WarslingSniperKit/tra/autotra/%LANGUAGE%~
 	END
 
 	LAF autotra_workaround END
@@ -55,8 +55,8 @@ LABEL ~Adam_Zsoldos_WarslingSniperKit~
 SUBCOMPONENT @0  //Warsling Sniper Kit for Fighters
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 
-OUTER_SET WarslingSniperKit = 1
-OUTER_SET WarslingSniperKit_Fault = 0
+	OUTER_SET WarslingSniperKit = 1
+	OUTER_SET WarslingSniperKit_Fault = 0
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
@@ -68,8 +68,8 @@ LABEL ~Adam_Zsoldos_WarslingSniperKit-All_Pourcentage~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 
-OUTER_SET WarslingSniperKit = 2
-OUTER_SET WarslingSniperKit_Fault = 0
+	OUTER_SET WarslingSniperKit = 2
+	OUTER_SET WarslingSniperKit_Fault = 0
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
@@ -81,8 +81,8 @@ LABEL ~Adam_Zsoldos_WarslingSniperKit-Multi~
 SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 
-OUTER_SET WarslingSniperKit = 3
-OUTER_SET WarslingSniperKit_Fault = 0
+	OUTER_SET WarslingSniperKit = 3
+	OUTER_SET WarslingSniperKit_Fault = 0
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
@@ -95,8 +95,8 @@ SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 // REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~1~ ~~
 
-OUTER_SET WarslingSniperKit = 2
-OUTER_SET WarslingSniperKit_Fault = 2
+	OUTER_SET WarslingSniperKit = 2
+	OUTER_SET WarslingSniperKit_Fault = 2
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
@@ -109,8 +109,8 @@ SUBCOMPONENT @0
 REQUIRE_PREDICATE GAME_IS ~tob bgee iwdee bg2ee eet bgt~ @5
 // REQUIRE_PREDICATE MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~2~ ~~
 
-OUTER_SET WarslingSniperKit = 3
-OUTER_SET WarslingSniperKit_Fault = 1
+	OUTER_SET WarslingSniperKit = 3
+	OUTER_SET WarslingSniperKit_Fault = 1
 
 INCLUDE ~WarslingSniperKit/lib/WarslingSniperKit.tpa~
 
@@ -132,14 +132,14 @@ REQUIRE_PREDICATE	(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~) ||
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
-	OUTER_SET kit_class = 16   // FIGHTER_DRUID
-		OUTER_SPRINT kit_name ~A0WS_FD~ // FIGHTER_DRUID
-			OUTER_SPRINT base_class ~F~ // FIGHTER
-				OUTER_SPRINT kittable ~K_FD_H   K_FD_D  K_FD_G  K_FD_E  K_FD_HE  K_FD_HL  K_FD_H~ // FIGHTER_DRUID table
-					OUTER_SPRINT luabbr ~FD0~ // FIGHTER_DRUID table
+		OUTER_SET kit_class = 16   // FIGHTER_DRUID
+			OUTER_SPRINT kit_name ~A0WS_FD~ // FIGHTER_DRUID
+				OUTER_SPRINT base_class ~F~ // FIGHTER
+					OUTER_SPRINT kittable ~K_FD_H   K_FD_D  K_FD_G  K_FD_E  K_FD_HE  K_FD_HL  K_FD_H~ // FIGHTER_DRUID table
+						OUTER_SPRINT luabbr ~FD0~ // FIGHTER_DRUID table
 
 	INCLUDE ~WarslingSniperKit/lib/WarslingSniper_NpcKit.tpa~
-	
+
 END ELSE BEGIN
 
 		OUTER_SPRINT kit_name ~A0WS~ // Original
@@ -149,44 +149,47 @@ END
 // Borrowed from Charlatan Kit by Raduziel
 
 COPY_EXISTING ~kitlist.2da~ ~override~
-  COUNT_2DA_ROWS ~9~ "rows"
-  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "%index%" 5 9 "clab"
-    PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
-      READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
-      SET "rows" = 0
-    END
-  END
-  BUT_ONLY_IF_IT_CHANGES
+	COUNT_2DA_ROWS ~9~ "rows"
+		FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+			READ_2DA_ENTRY "%index%" 5 9 "clab"
+				PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
+			READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
+					SET "rows" = 0
+				END
+		END
+BUT_ONLY_IF_IT_CHANGES
 
 
-	ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
 		OUTER_SET kit_Jaheira = kit_id // A0WS_FD
 
-	END ELSE BEGIN
+END ELSE BEGIN
 
 		OUTER_SET kit_Jaheira = "%A0WS%"
 
-			// Borrowed from Tweak Anthology by Camdawg
+		// Borrowed from Tweak Anthology by Camdawg
 
-			OUTER_SET proficiency_sling = 5
+		OUTER_SET proficiency_sling = 5
 
-				COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_THIEF
-					REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
-					~\1%proficiency_sling%~	IF_EXISTS 
+	COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_THIEF
+		REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
+			~\1%proficiency_sling%~
+	IF_EXISTS
 
-	END
+END
 
-//												Regular
-ACTION_FOR_EACH creature IN JAHEI12B JAHEI14 JAHEIR JAHEIR11 JAHEIR12 JAHEIR2 JAHEIR4 JAHEIR6 JAHEIR7 JAHEIR_7 JAHEIR8 JAHEIRD BEGIN
+// Regular
+ACTION_FOR_EACH creature IN
+	JAHEI12B JAHEI14 JAHEIR JAHEIR11 JAHEIR12 JAHEIR2 JAHEIR4 JAHEIR6 JAHEIR7 JAHEIR_7 JAHEIR8 JAHEIRD
+						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
-PRINT ~Jaheira Exists~
-		COPY_EXISTING ~%creature%.cre~ ~override~
-			WRITE_SHORT 0x244 0
-			WRITE_SHORT 0x246 0x4000 + kit_Jaheira
-	BUT_ONLY
+		PRINT ~Jaheira Exists~
+			COPY_EXISTING ~%creature%.cre~ ~override~
+				WRITE_SHORT 0x244 0
+				WRITE_SHORT 0x246 0x4000 + kit_Jaheira
+			BUT_ONLY
 
 	END
 END
@@ -207,14 +210,14 @@ REQUIRE_PREDICATE	(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~) ||
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
-	OUTER_SET kit_class = 9   // FIGHTER_THIEF
-		OUTER_SPRINT kit_name ~A0WS_FT~ // FIGHTER_THIEF
-			OUTER_SPRINT base_class ~F~ // FIGHTER
-				OUTER_SPRINT kittable ~K_FT_H   K_FT_D  K_FT_G  K_FT_E  K_FT_HE  K_FT_HL  K_FT_H~ // FIGHTER_THIEF table
-					OUTER_SPRINT luabbr ~FT0~ // FIGHTER_THIEF table
+		OUTER_SET kit_class = 9   // FIGHTER_THIEF
+			OUTER_SPRINT kit_name ~A0WS_FT~ // FIGHTER_THIEF
+				OUTER_SPRINT base_class ~F~ // FIGHTER
+					OUTER_SPRINT kittable ~K_FT_H   K_FT_D  K_FT_G  K_FT_E  K_FT_HE  K_FT_HL  K_FT_H~ // FIGHTER_THIEF table
+						OUTER_SPRINT luabbr ~FT0~ // FIGHTER_THIEF table
 
 	INCLUDE ~WarslingSniperKit/lib/WarslingSniper_NpcKit.tpa~
-	
+
 END ELSE BEGIN
 
 		OUTER_SPRINT kit_name ~A0WS~ // Original
@@ -224,44 +227,47 @@ END
 // Borrowed from Charlatan Kit by Raduziel
 
 COPY_EXISTING ~kitlist.2da~ ~override~
-  COUNT_2DA_ROWS ~9~ "rows"
-  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "%index%" 5 9 "clab"
-    PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
-      READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
-      SET "rows" = 0
-    END
-  END
-  BUT_ONLY_IF_IT_CHANGES
+	COUNT_2DA_ROWS ~9~ "rows"
+		FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+			READ_2DA_ENTRY "%index%" 5 9 "clab"
+				PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
+			READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
+					SET "rows" = 0
+				END
+		END
+BUT_ONLY_IF_IT_CHANGES
 
 
-	ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
 		OUTER_SET kit_Montaron = kit_id // A0WS_FT
 
-	END ELSE BEGIN
+END ELSE BEGIN
 
 		OUTER_SET kit_Montaron = "%A0WS%"
 
 			// Borrowed from Tweak Anthology by Camdawg
 
-			OUTER_SET proficiency_sling = 5
+		OUTER_SET proficiency_sling = 5
 
-				COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_THIEF
-					REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
-					~\1%proficiency_sling%~	IF_EXISTS
+	COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_THIEF
+		REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
+			~\1%proficiency_sling%~
+	IF_EXISTS
 
-	END
+END
 
-//							Regular							TDD		BG1NPCSoA
-ACTION_FOR_EACH creature IN MONTAR MONTAR2 MONTAR4 MONTAR6 MONTYRA2 7XCRE74 BEGIN
+//	Regular / TDD / BG1NPCSoA
+ACTION_FOR_EACH creature IN
+	MONTAR MONTAR2 MONTAR4 MONTAR6 MONTYRA2 7XCRE74
+						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
-PRINT ~Montaron Exists~
-		COPY_EXISTING ~%creature%.cre~ ~override~
-			WRITE_SHORT 0x244 0
-			WRITE_SHORT 0x246 0x4000 + kit_Montaron
-	BUT_ONLY
+		PRINT ~Montaron Exists~
+			COPY_EXISTING ~%creature%.cre~ ~override~
+				WRITE_SHORT 0x244 0
+				WRITE_SHORT 0x246 0x4000 + kit_Montaron
+			BUT_ONLY
 
 	END
 END
@@ -282,14 +288,14 @@ REQUIRE_PREDICATE	(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~) ||
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
-	OUTER_SET kit_class = 8   // FIGHTER_CLERIC
-		OUTER_SPRINT kit_name ~A0WS_FC~ // FIGHTER_CLERIC
-			OUTER_SPRINT base_class ~F~ // FIGHTER
-				OUTER_SPRINT kittable ~ K_FC_H   K_FC_D  K_FC_G  K_FC_E  K_FC_HE  K_FC_HL  K_FC_HO~ // FIGHTER_CLERIC table
-					OUTER_SPRINT luabbr ~FC0~ // FIGHTER_CLERIC table
+		OUTER_SET kit_class = 8   // FIGHTER_CLERIC
+			OUTER_SPRINT kit_name ~A0WS_FC~ // FIGHTER_CLERIC
+				OUTER_SPRINT base_class ~F~ // FIGHTER
+					OUTER_SPRINT kittable ~ K_FC_H   K_FC_D  K_FC_G  K_FC_E  K_FC_HE  K_FC_HL  K_FC_HO~ // FIGHTER_CLERIC table
+						OUTER_SPRINT luabbr ~FC0~ // FIGHTER_CLERIC table
 
 	INCLUDE ~WarslingSniperKit/lib/WarslingSniper_NpcKit.tpa~
-	
+
 END ELSE BEGIN
 
 		OUTER_SPRINT kit_name ~A0WS~ // Original
@@ -299,44 +305,47 @@ END
 // Borrowed from Charlatan Kit by Raduziel
 
 COPY_EXISTING ~kitlist.2da~ ~override~
-  COUNT_2DA_ROWS ~9~ "rows"
-  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "%index%" 5 9 "clab"
-    PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
-      READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
-      SET "rows" = 0
-    END
-  END
-  BUT_ONLY_IF_IT_CHANGES
+	COUNT_2DA_ROWS ~9~ "rows"
+		FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+			READ_2DA_ENTRY "%index%" 5 9 "clab"
+				PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
+			READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
+					SET "rows" = 0
+				END
+		END
+BUT_ONLY_IF_IT_CHANGES
 
 
-	ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
 		OUTER_SET kit_Yeslick = kit_id // A0WS_FD
 
-	END ELSE BEGIN
+END ELSE BEGIN
 
 		OUTER_SET kit_Yeslick = "%A0WS%"
 
 			// Borrowed from Tweak Anthology by Camdawg
 
-			OUTER_SET proficiency_sling = 5
+		OUTER_SET proficiency_sling = 5
 
-				COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_CLERIC
-					REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
-					~\1%proficiency_sling%~	IF_EXISTS 
+	COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_CLERIC
+		REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
+			~\1%proficiency_sling%~
+	IF_EXISTS
 
-	END
+END
 
-//							Regular					yeslicknpc		?		TDD		BG1NPCSoA
-ACTION_FOR_EACH creature IN YESLIC YESLIC5 YESLIS lk#yes25 lk#yesl DYESLICK YESLIC9 7Xcre2 BEGIN
+// Regular / yeslicknpc / ? / TDD / BG1NPCSoA
+ACTION_FOR_EACH creature IN
+	YESLIC YESLIC5 YESLIS lk#yes25 lk#yesl DYESLICK YESLIC9 7Xcre2
+						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
-PRINT ~Yeslick Exists~
-		COPY_EXISTING ~%creature%.cre~ ~override~
-			WRITE_SHORT 0x244 0
-			WRITE_SHORT 0x246 0x4000 + kit_Yeslick
-	BUT_ONLY
+		PRINT ~Yeslick Exists~
+			COPY_EXISTING ~%creature%.cre~ ~override~
+				WRITE_SHORT 0x244 0
+				WRITE_SHORT 0x246 0x4000 + kit_Yeslick
+			BUT_ONLY
 
 	END
 END
@@ -357,14 +366,14 @@ REQUIRE_PREDICATE	(MOD_IS_INSTALLED ~WarslingSniperKit.TP2~ ~0~) ||
 
 ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
-	OUTER_SET kit_class = 9   // FIGHTER_THIEF
-		OUTER_SPRINT kit_name ~A0WS_FT~ // FIGHTER_THIEF
-			OUTER_SPRINT base_class ~F~ // FIGHTER
-				OUTER_SPRINT kittable ~K_FT_H   K_FT_D  K_FT_G  K_FT_E  K_FT_HE  K_FT_HL  K_FT_H~ // FIGHTER_THIEF table
-					OUTER_SPRINT luabbr ~FT0~ // FIGHTER_THIEF table
+		OUTER_SET kit_class = 9   // FIGHTER_THIEF
+			OUTER_SPRINT kit_name ~A0WS_FT~ // FIGHTER_THIEF
+				OUTER_SPRINT base_class ~F~ // FIGHTER
+					OUTER_SPRINT kittable ~K_FT_H   K_FT_D  K_FT_G  K_FT_E  K_FT_HE  K_FT_HL  K_FT_H~ // FIGHTER_THIEF table
+						OUTER_SPRINT luabbr ~FT0~ // FIGHTER_THIEF table
 
 	INCLUDE ~WarslingSniperKit/lib/WarslingSniper_NpcKit.tpa~
-	
+
 END ELSE BEGIN
 
 		OUTER_SPRINT kit_name ~A0WS~ // Original
@@ -374,44 +383,47 @@ END
 // Borrowed from Charlatan Kit by Raduziel
 
 COPY_EXISTING ~kitlist.2da~ ~override~
-  COUNT_2DA_ROWS ~9~ "rows"
-  FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
-    READ_2DA_ENTRY "%index%" 5 9 "clab"
-    PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
-      READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
-      SET "rows" = 0
-    END
-  END
-  BUT_ONLY_IF_IT_CHANGES
+	COUNT_2DA_ROWS ~9~ "rows"
+		FOR ( index = 31 ; index < rows ; index = index + 1 ) BEGIN
+			READ_2DA_ENTRY "%index%" 5 9 "clab"
+				PATCH_IF ("%clab%" STRING_COMPARE_CASE "%kit_name%" = 0) BEGIN
+			READ_2DA_ENTRY "%index%" 0 9 "%kit_name%"
+					SET "rows" = 0
+				END
+		END
+BUT_ONLY_IF_IT_CHANGES
 
 
-	ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
+ACTION_IF GAME_IS ~bgee bg2ee eet~ BEGIN
 
 		OUTER_SET kit_Deder = kit_id // A0WS_FD
 
-	END ELSE BEGIN
+END ELSE BEGIN
 
 		OUTER_SET kit_Deder = "%A0WS%"
 
 			// Borrowed from Tweak Anthology by Camdawg
 
-			OUTER_SET proficiency_sling = 5
+		OUTER_SET proficiency_sling = 5
 
-				COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_THIEF
-					REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
-					~\1%proficiency_sling%~	IF_EXISTS
+	COPY_EXISTING ~weapprof.2da~ ~override~ // FIGHTER_THIEF
+		REPLACE_TEXTUALLY ~^\(SLING[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+[^ %TAB%]+[ %TAB%]+\)[^ %TAB%]+~
+			~\1%proficiency_sling%~
+	IF_EXISTS
 
-	END
+END
 
-//							Regular
-ACTION_FOR_EACH creature IN DEDER DEDER3 BEGIN
+// Regular
+ACTION_FOR_EACH creature IN
+	DEDER DEDER3
+						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
-PRINT ~Deder Exists~
-		COPY_EXISTING ~%creature%.cre~ ~override~
-			WRITE_SHORT 0x244 0
-			WRITE_SHORT 0x246 0x4000 + kit_Deder
-	BUT_ONLY
+		PRINT ~Deder Exists~
+			COPY_EXISTING ~%creature%.cre~ ~override~
+				WRITE_SHORT 0x244 0
+				WRITE_SHORT 0x246 0x4000 + kit_Deder
+			BUT_ONLY
 
 	END
 END
