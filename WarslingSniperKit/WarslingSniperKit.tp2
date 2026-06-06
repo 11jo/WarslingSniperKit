@@ -185,11 +185,16 @@ ACTION_FOR_EACH creature IN
 						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
-		PRINT ~Jaheira Exists~
+	
+		PRINT ~Jaheira exists~
 			COPY_EXISTING ~%creature%.cre~ ~override~
 				WRITE_SHORT 0x244 0
 				WRITE_SHORT 0x246 0x4000 + kit_Jaheira
 			BUT_ONLY
+
+	END ELSE BEGIN
+
+		PRINT ~Jaheira doesn't exists~
 
 	END
 END
@@ -263,11 +268,16 @@ ACTION_FOR_EACH creature IN
 						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
 		PRINT ~Montaron Exists~
 			COPY_EXISTING ~%creature%.cre~ ~override~
 				WRITE_SHORT 0x244 0
 				WRITE_SHORT 0x246 0x4000 + kit_Montaron
 			BUT_ONLY
+
+	END ELSE BEGIN
+
+		PRINT ~Montaron doesn't exists~
 
 	END
 END
@@ -341,11 +351,16 @@ ACTION_FOR_EACH creature IN
 						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
 		PRINT ~Yeslick Exists~
 			COPY_EXISTING ~%creature%.cre~ ~override~
 				WRITE_SHORT 0x244 0
 				WRITE_SHORT 0x246 0x4000 + kit_Yeslick
 			BUT_ONLY
+
+	END ELSE BEGIN
+
+		PRINT ~Yeslick doesn't exists~
 
 	END
 END
@@ -419,11 +434,16 @@ ACTION_FOR_EACH creature IN
 						BEGIN
 
 	ACTION_IF FILE_EXISTS_IN_GAME ~%creature%.cre~ THEN BEGIN
+
 		PRINT ~Deder Exists~
 			COPY_EXISTING ~%creature%.cre~ ~override~
 				WRITE_SHORT 0x244 0
 				WRITE_SHORT 0x246 0x4000 + kit_Deder
 			BUT_ONLY
+
+	END ELSE BEGIN
+
+		PRINT ~Deder doesn't exists~
 
 	END
 END

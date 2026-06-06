@@ -136,6 +136,15 @@ ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS10.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 			INT_VAR
+				opcode   = 83
+				target   = 2
+				timing   = 0
+				duration = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
 				opcode   = 206
 				target   = 2
 				timing   = 0
@@ -179,6 +188,31 @@ ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS11.SPL~ ~override~
 		LPF ADD_SPELL_EFFECT
 			INT_VAR
+				opcode   = 83
+				target   = 2
+				timing   = 0
+				duration = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 206
+				target   = 2
+				timing   = 0
+				duration = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 148
+				target   = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
 				opcode   = 206
 				target   = 2
 				timing   = 0
@@ -217,6 +251,47 @@ ACTION_IF WarslingSniperKit = 2 THEN BEGIN
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS12.EFF~ ~override~
 
 	COPY ~WarslingSniperKit/Comp_Pourcentage/A0WS12.SPL~ ~override~
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 83
+				target   = 2
+				timing   = 0
+				duration = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 206
+				target   = 2
+				timing   = 0
+				duration = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 148
+				target   = 1
+			STR_VAR
+				resource = A0WS03
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 206
+				target   = 2
+				timing   = 0
+				duration = 1
+			STR_VAR
+				resource = A0WS10
+		END
+		LPF ADD_SPELL_EFFECT
+			INT_VAR
+				opcode   = 148
+				target   = 1
+			STR_VAR
+				resource = A0WS10
+		END
 		LPF ADD_SPELL_EFFECT
 			INT_VAR
 				opcode   = 206
